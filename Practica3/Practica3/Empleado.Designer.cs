@@ -58,7 +58,12 @@
             this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblRecientes = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            this.panel1.SuspendLayout();
             this.pEmpleado.SuspendLayout();
             this.gbRegistroEmpleado.SuspendLayout();
             this.SuspendLayout();
@@ -99,11 +104,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.lblRecientes);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 595);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1106, 24);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pEmpleado
             // 
@@ -350,6 +360,48 @@
             this.jefe.ReadOnly = true;
             this.jefe.Width = 150;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(12, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 14);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Total de Empleados:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(119, 4);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 14);
+            this.lblTotal.TabIndex = 1;
+            // 
+            // lblRecientes
+            // 
+            this.lblRecientes.AutoSize = true;
+            this.lblRecientes.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecientes.ForeColor = System.Drawing.Color.White;
+            this.lblRecientes.Location = new System.Drawing.Point(350, 4);
+            this.lblRecientes.Name = "lblRecientes";
+            this.lblRecientes.Size = new System.Drawing.Size(0, 14);
+            this.lblRecientes.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(218, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 14);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Agregados Recientemente";
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +414,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pEmpleado.ResumeLayout(false);
             this.pEmpleado.PerformLayout();
             this.gbRegistroEmpleado.ResumeLayout(false);
@@ -401,5 +455,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn jefe;
         private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblRecientes;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -14,6 +14,7 @@ namespace Practica3
 {
     public partial class Empleado : Form
     {
+        int contador = 0;
         EmpleadoLogic empleado = new EmpleadoLogic();
 
         public Empleado()
@@ -21,6 +22,7 @@ namespace Practica3
             InitializeComponent();
             llenarTipo(empleado.tiposEmpleado(), cbTipoEmpleado);
             llenarTabla(empleado.listaEmpleados());
+            lblRecientes.Text = contador.ToString();
         }
 
 
@@ -68,6 +70,7 @@ namespace Practica3
 
         public void llenarTabla(LinkedList<Entidad.Empleado> empleados)
         {
+            lblTotal.Text = empleados.Count.ToString();
             dgvEmpleados.Rows.Clear();
 
             foreach (var item in empleados)
@@ -95,6 +98,8 @@ namespace Practica3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            
             string[] tipoEmpleado = cbTipoEmpleado.SelectedItem.ToString().Split('.');
             if (tipoEmpleado[0].Equals("8"))
             {
@@ -102,6 +107,8 @@ namespace Practica3
                 cbJefes.Text, cbTipoEmpleado.SelectedItem.ToString()))
                 {
                     MessageBox.Show("Empleado Registrado Exitosamente");
+                    llenarTabla(empleado.listaEmpleados());
+                    contador++;
                 }
                 else
                 {
@@ -114,12 +121,21 @@ namespace Practica3
                 cbJefes.Text, cbTipoEmpleado.SelectedItem.ToString()))
                 {
                     MessageBox.Show("Empleado Registrado Exitosamente");
+                    llenarTabla(empleado.listaEmpleados());
+                    contador++;
                 }
                 else
                 {
                     MessageBox.Show("No se pudeo registrar el empleado OnO");
                 }
             }
+
+            lblRecientes.Text = contador.ToString();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
