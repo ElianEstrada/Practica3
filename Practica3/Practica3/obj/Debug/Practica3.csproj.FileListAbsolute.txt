@@ -1,0 +1,17 @@
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Practica3.exe.config
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Practica3.exe
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Practica3.pdb
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Entidad.dll
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Logica.dll
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Acceso_Datos.dll
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Entidad.pdb
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Logica.pdb
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\bin\Debug\Acceso_Datos.pdb
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.csprojAssemblyReference.cache
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Empleado.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Form1.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Properties.Resources.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.csproj.GenerateResource.cache
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.csproj.CopyComplete
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.exe
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.pdb
