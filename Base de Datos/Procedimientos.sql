@@ -79,3 +79,7 @@ begin
 select * from Empleado as E
 where E.fk_idTipoEmpleado = 1;
 end;
+
+delete from Empleado
+where cuiEmpleado between 1 and 2;
+
