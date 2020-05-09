@@ -20,12 +20,13 @@ namespace Practica3
         {
             InitializeComponent();
             llenarTipo(empleado.tiposEmpleado(), cbTipoEmpleado);
+            llenarTabla(empleado.listaEmpleados());
         }
 
 
         public void llenarTipo(List<Entidad.TipoEmpleado> tipos, ComboBox comboBox)
         {
-
+            comboBox.Items.Clear();
             List<String> tipoEmpleado = new List<string>();
 
             foreach (var item in tipos)
@@ -37,5 +38,88 @@ namespace Practica3
 
         }
 
+        public void llenarJefes(LinkedList<Entidad.Empleado> empleados, ComboBox comboBox, string tipoEmpleado)
+        {
+            List<string> jefe = new List<string>();
+            comboBox.Items.Clear();
+            foreach (var item in empleados)
+            {
+                if(tipoEmpleado.Equals("Segundo Cocinero") || tipoEmpleado.Equals("Tercer Cocinero"))
+                {
+                    if(item.tipoEmpleado.Equals("Primer Cocinero"))
+                    {
+                        jefe.Add(item.cui + ", " + item.nombre);
+                    }
+                }
+                else
+                {
+                    if(!tipoEmpleado.Equals("Chef de Cuisine"))
+                    {
+                        if (item.tipoEmpleado.Equals("Chef de Cuisine"))
+                        {
+                            jefe.Add(item.cui + ", " + item.nombre);
+                        }
+                    }
+                }
+            }
+
+            comboBox.Items.AddRange(jefe.ToArray());
+        }
+
+        public void llenarTabla(LinkedList<Entidad.Empleado> empleados)
+        {
+            dgvEmpleados.Rows.Clear();
+
+            foreach (var item in empleados)
+            {
+                dgvEmpleados.Rows.Add(
+                    item.cui,
+                    item.nombre, 
+                    item.apellido,
+                    item.telefono, 
+                    item.direccion,
+                    item.sueldo,
+                    item.jefe, 
+                    item.tipoEmpleado
+                    );
+            }
+        }
+
+     
+        private void cbTipoEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbJefes.Text = "";
+            string[] tipoEmpleado = cbTipoEmpleado.SelectedItem.ToString().Split('.');
+            llenarJefes(empleado.jefes(), cbJefes, tipoEmpleado[1]);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string[] tipoEmpleado = cbTipoEmpleado.SelectedItem.ToString().Split('.');
+            if (tipoEmpleado[0].Equals("8"))
+            {
+                if (empleado.addEmpleado(long.Parse(txtCuiEmpleado.Text), txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtDireccion.Text, double.Parse(txtSueldo.Text), 0,
+                cbJefes.Text, cbTipoEmpleado.SelectedItem.ToString()))
+                {
+                    MessageBox.Show("Empleado Registrado Exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudeo registrar el empleado OnO");
+                }
+            }
+            else
+            {
+                if (empleado.addEmpleado(long.Parse(txtCuiEmpleado.Text), txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtDireccion.Text, double.Parse(txtSueldo.Text), null,
+                cbJefes.Text, cbTipoEmpleado.SelectedItem.ToString()))
+                {
+                    MessageBox.Show("Empleado Registrado Exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudeo registrar el empleado OnO");
+                }
+            }
+        }
     }
 }

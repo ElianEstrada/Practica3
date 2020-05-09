@@ -47,6 +47,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbTipoEmpleado = new System.Windows.Forms.ComboBox();
+            this.cbJefes = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.pEmpleado.SuspendLayout();
             this.gbRegistroEmpleado.SuspendLayout();
@@ -54,11 +65,24 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nombreEmpleado,
+            this.apellidoEmpleado,
+            this.telefono,
+            this.direccion,
+            this.sueldo,
+            this.tipo,
+            this.jefe});
+            this.dgvEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvEmpleados.Location = new System.Drawing.Point(0, 403);
+            this.dgvEmpleados.Location = new System.Drawing.Point(0, 370);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(1106, 192);
+            this.dgvEmpleados.ReadOnly = true;
+            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpleados.Size = new System.Drawing.Size(1106, 225);
             this.dgvEmpleados.TabIndex = 0;
             // 
             // label1
@@ -94,6 +118,9 @@
             // 
             // gbRegistroEmpleado
             // 
+            this.gbRegistroEmpleado.Controls.Add(this.button1);
+            this.gbRegistroEmpleado.Controls.Add(this.cbJefes);
+            this.gbRegistroEmpleado.Controls.Add(this.label9);
             this.gbRegistroEmpleado.Controls.Add(this.cbTipoEmpleado);
             this.gbRegistroEmpleado.Controls.Add(this.label8);
             this.gbRegistroEmpleado.Controls.Add(this.txtSueldo);
@@ -112,7 +139,7 @@
             this.gbRegistroEmpleado.ForeColor = System.Drawing.Color.White;
             this.gbRegistroEmpleado.Location = new System.Drawing.Point(12, 76);
             this.gbRegistroEmpleado.Name = "gbRegistroEmpleado";
-            this.gbRegistroEmpleado.Size = new System.Drawing.Size(1082, 321);
+            this.gbRegistroEmpleado.Size = new System.Drawing.Size(1082, 272);
             this.gbRegistroEmpleado.TabIndex = 3;
             this.gbRegistroEmpleado.TabStop = false;
             this.gbRegistroEmpleado.Text = "Agregar Empleado";
@@ -130,6 +157,7 @@
             // txtCuiEmpleado
             // 
             this.txtCuiEmpleado.Location = new System.Drawing.Point(73, 33);
+            this.txtCuiEmpleado.MaxLength = 13;
             this.txtCuiEmpleado.Name = "txtCuiEmpleado";
             this.txtCuiEmpleado.Size = new System.Drawing.Size(165, 22);
             this.txtCuiEmpleado.TabIndex = 1;
@@ -171,6 +199,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(901, 36);
+            this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(165, 22);
             this.txtTelefono.TabIndex = 7;
@@ -187,16 +216,16 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(171, 93);
+            this.txtDireccion.Location = new System.Drawing.Point(153, 89);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(165, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(460, 22);
             this.txtDireccion.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(88, 96);
+            this.label6.Location = new System.Drawing.Point(70, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 19);
             this.label6.TabIndex = 8;
@@ -204,7 +233,7 @@
             // 
             // txtSueldo
             // 
-            this.txtSueldo.Location = new System.Drawing.Point(462, 96);
+            this.txtSueldo.Location = new System.Drawing.Point(742, 92);
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(165, 22);
             this.txtSueldo.TabIndex = 11;
@@ -213,7 +242,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(398, 99);
+            this.label7.Location = new System.Drawing.Point(678, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 19);
             this.label7.TabIndex = 10;
@@ -223,7 +252,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(685, 102);
+            this.label8.Location = new System.Drawing.Point(171, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 19);
             this.label8.TabIndex = 12;
@@ -232,10 +261,94 @@
             // cbTipoEmpleado
             // 
             this.cbTipoEmpleado.FormattingEnabled = true;
-            this.cbTipoEmpleado.Location = new System.Drawing.Point(825, 99);
+            this.cbTipoEmpleado.Location = new System.Drawing.Point(311, 146);
             this.cbTipoEmpleado.Name = "cbTipoEmpleado";
             this.cbTipoEmpleado.Size = new System.Drawing.Size(172, 23);
             this.cbTipoEmpleado.TabIndex = 13;
+            this.cbTipoEmpleado.SelectedIndexChanged += new System.EventHandler(this.cbTipoEmpleado_SelectedIndexChanged);
+            // 
+            // cbJefes
+            // 
+            this.cbJefes.FormattingEnabled = true;
+            this.cbJefes.Location = new System.Drawing.Point(600, 146);
+            this.cbJefes.Name = "cbJefes";
+            this.cbJefes.Size = new System.Drawing.Size(198, 23);
+            this.cbJefes.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(542, 148);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 19);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Jefe:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(455, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 35);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Agregar Empleado";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Cui Empleado";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nombreEmpleado
+            // 
+            this.nombreEmpleado.HeaderText = "Nombres";
+            this.nombreEmpleado.Name = "nombreEmpleado";
+            this.nombreEmpleado.ReadOnly = true;
+            this.nombreEmpleado.Width = 120;
+            // 
+            // apellidoEmpleado
+            // 
+            this.apellidoEmpleado.HeaderText = "Apellidos";
+            this.apellidoEmpleado.Name = "apellidoEmpleado";
+            this.apellidoEmpleado.ReadOnly = true;
+            this.apellidoEmpleado.Width = 120;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "Dirección";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 272;
+            // 
+            // sueldo
+            // 
+            this.sueldo.HeaderText = "Sueldo";
+            this.sueldo.Name = "sueldo";
+            this.sueldo.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "TipoEmpleado";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // jefe
+            // 
+            this.jefe.HeaderText = "Jefe";
+            this.jefe.Name = "jefe";
+            this.jefe.ReadOnly = true;
+            this.jefe.Width = 150;
             // 
             // Empleado
             // 
@@ -246,6 +359,7 @@
             this.Controls.Add(this.pEmpleado);
             this.Controls.Add(this.panel1);
             this.Name = "Empleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.pEmpleado.ResumeLayout(false);
@@ -257,8 +371,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pEmpleado;
@@ -277,5 +389,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCuiEmpleado;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbJefes;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jefe;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
     }
 }

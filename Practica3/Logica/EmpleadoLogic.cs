@@ -18,5 +18,44 @@ namespace Logica
             return empleadoDA.tipoEmpleados();
         }
 
+        public LinkedList<Empleado> jefes()
+        {
+            return empleadoDA.listaJefes();
+        }
+
+        public LinkedList<Empleado> listaEmpleados()
+        {
+            return empleadoDA.listaEmpleado();
+        }
+
+        public bool addEmpleado(long cui, string nombre, string apellido, int telefono, string direccion, double sueldo, int? bono, string jefe, string tipo)
+        {
+            if(arreglarTipo(tipo) == 1)
+            {
+                if (!empleadoDA.existeCuisine())
+                {
+                    return empleadoDA.addEmpleado(cui, nombre, apellido, telefono, direccion, sueldo, bono, null, arreglarTipo(tipo));
+                }
+            }
+            else
+            {
+                return empleadoDA.addEmpleado(cui, nombre, apellido, telefono, direccion, sueldo, bono, arreglarJefe(jefe), arreglarTipo(tipo));
+            }
+
+            return false;
+        }
+
+        public long arreglarJefe(string jefe)
+        {
+            string[] cuiJefe = jefe.Split(',');
+            return long.Parse(cuiJefe[0]);
+        }
+
+        public int arreglarTipo(string tipo)
+        {
+            string[] idTipo = tipo.Split('.');
+            return int.Parse(idTipo[0]);
+        }
+
     }
 }
