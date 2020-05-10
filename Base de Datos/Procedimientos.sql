@@ -83,3 +83,54 @@ end;
 delete from Empleado
 where cuiEmpleado between 1 and 2;
 
+select * from Platillo;
+
+
+insert into platillo values('Arroz con Pollo', 17.5);
+insert into platillo values('Tacos', 10);
+insert into platillo values('Tofu', 7.5);
+insert into platillo values('Pollo a la Parmesana', 22.5);
+insert into platillo values('Pescado con papas', 20);
+insert into platillo values('Lasaña', 25);
+insert into platillo values('Croissant', 12);
+insert into platillo values('Arepas', 15);
+insert into platillo values('Pastel de Nata', 35);
+insert into platillo values('Donas', 5.5);
+
+
+create procedure show_platillos
+as
+begin
+select * from platillo;
+end;
+
+select * from cliente;
+
+create procedure show_clientes
+as
+begin
+select * from cliente;
+end;
+
+exec show_clientes;
+
+create procedure add_cliente
+@cui numeric(13,0), @nombre varchar(45), @apellido varchar(45), @celular numeric(8,0), @nit varchar(45)
+as
+begin
+insert into cliente values(@cui, @nombre, @apellido, null, @celular, @nit);
+end;
+
+
+exec add_cliente 3034366110108, 'Elian', 'Estrada', 35384675, '1234567';
+
+create procedure existeCliente
+@cuiCliente numeric(13,0)
+as
+begin
+select * from cliente 
+where cuiCliente = @cuiCliente;
+end;
+
+exec existeCliente 3034366110108;
+

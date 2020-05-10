@@ -15,11 +15,13 @@ namespace Practica3
     {
 
         List<PlatilloPedido> platilloPedidos = new List<PlatilloPedido>();
+        int platillosAgregados = 0;
 
         public Pedido()
         {
             InitializeComponent();
             dtpHoraPedido.Value = DateTime.Now;
+            lblPlatillos.Text = platillosAgregados.ToString();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -68,8 +70,10 @@ namespace Practica3
                 platillo.cantidad = int.Parse(txtCantidad.Text);
 
                 platilloPedidos.Add(platillo);
-
+                platillosAgregados++;
                 MessageBox.Show("Platillo Agregado");
+                lblPlatillos.Text = platillosAgregados.ToString();
+
             }
             else
             {

@@ -50,9 +50,14 @@ references tipoEmpleado (idTipoEmpleado);
 --Queda pendiente :v
 
 create table Chef_Platillo(
-	idChefPlatillo int identity(1,1) primary key not null
+	idChefPlatillo int identity(1,1) primary key not null,
+	cantidad int,
+	fk_chef numeric(13,0) not null,
+	fk_platillo int not null
 );
 
+alter table Chef_Platillo add constraint FK_ChefPlatillo foreign key (fk_chef) references Empleado(cuiEmpleado);
+alter table Chef_Platillo add constraint FK_PlatilloChef foreign key (fk_platillo) references Platillo(idPlatillo);
 
 --Continuamos con las demas tablas
 
@@ -64,3 +69,50 @@ create table cliente (
 	telefonoCelular numeric(8,0),
 	nitCliente varchar(45) not null
 );
+
+create table Bebida(
+	idBebida int identity(1,1) primary key not null,
+	nombre varchar(45) not null
+);
+
+create table Factura(
+	idFactura int primary key not null,
+	serieFactura varchar(45) not null,
+	direccionEntrega text,
+	hora time not null,
+	fecha date not null, 
+	total numeric(8, 2) not null
+);
+
+
+
+create table PedidoDomicilio (
+	idPedido int primary key not null,
+	hora time not null,
+	fecha date not null,
+	direccionEntrega text not null,
+	fk_cliente numeric(13, 0) not null,
+	fk_empleado numeric(13 ,0) not null,
+	fk_repartidor numeric(13 ,0) not null,
+	fk_factura int not null
+);
+
+alter table PedidoDomicilio add constraint fk_ClientePedido foreign key (fk_cliente) references Cliente(cuiCliente);
+alter table PedidoDomicilio add constraint fk_EmpleadoPedido foreign key (fk_empleado) references Empleado(cuiEmpleado);
+alter table PedidoDomicilio add constraint fk_EmpleadoRepartidor foreign key (fk_repartidor) references Empleado(cuiEmpleado);
+alter table PedidoDomicilio add constraint fk_factura foreign key (fk_factura) references Factura(idFactura);
+
+
+
+create table Pedido_Platillo (
+	idPedidoPlatillo int identity(1,1) primary key not null,
+	cantidad int not null,
+	subTotal numeric(8,2) not null,
+	fk_bebida int not null,
+	fk_pedido int not null,
+	fk_platillo int not null
+);
+
+alter table Pedido_Platillo add constraint fk_Bebida foreign key (fk_bebida) references Bebida(idBebida);
+alter table Pedido_Platillo add constraint fk_pedido foreign key (fk_pedido) references PedidoDomicilio(idPedido);
+alter table Pedido_Platillo add constraint fk_platilloPedido foreign key (fk_platillo) references Platillo (idPlatillo);
