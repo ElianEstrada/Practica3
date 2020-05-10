@@ -179,3 +179,9 @@ insert into Bebida values('Té Frio de Durazno');
 insert into Bebida values('Té Frio de Limón');
 insert into Bebida values('Fresco de Naranja');
 insert into Bebida values('Fresco de Melón');
+
+exec show_platillos;
+exec show_bebidas;
+exec show_jefes;
+exec show_TipoEmpleado;
+exec show_Empleado;

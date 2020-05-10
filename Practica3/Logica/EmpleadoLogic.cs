@@ -39,15 +39,15 @@ namespace Logica
             }
             else
             {
-                return empleadoDA.addEmpleado(cui, nombre, apellido, telefono, direccion, sueldo, bono, arreglarJefe(jefe), arreglarTipo(tipo));
+                return empleadoDA.addEmpleado(cui, nombre, apellido, telefono, direccion, sueldo, bono, arreglarEmpleados(jefe), arreglarTipo(tipo));
             }
 
             return false;
         }
 
-        public long arreglarJefe(string jefe)
+        public long arreglarEmpleados(string empleado)
         {
-            string[] cuiJefe = jefe.Split(',');
+            string[] cuiJefe = empleado.Split(',');
             return long.Parse(cuiJefe[0]);
         }
 
