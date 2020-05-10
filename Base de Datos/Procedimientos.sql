@@ -185,3 +185,4 @@ exec show_bebidas;
 exec show_jefes;
 exec show_TipoEmpleado;
 exec show_Empleado;
+exec show_clientes;
