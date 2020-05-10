@@ -58,7 +58,7 @@
             this.cbPlatillos = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAgregarPlatillo = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             this.gbRegistroEmpleado.Controls.Add(this.label15);
             this.gbRegistroEmpleado.Controls.Add(this.txtCantidad);
             this.gbRegistroEmpleado.Controls.Add(this.label14);
-            this.gbRegistroEmpleado.Controls.Add(this.textBox2);
+            this.gbRegistroEmpleado.Controls.Add(this.txtIdPedido);
             this.gbRegistroEmpleado.Controls.Add(this.label13);
             this.gbRegistroEmpleado.Controls.Add(this.btnAgregarPlatillo);
             this.gbRegistroEmpleado.Controls.Add(this.cbPlatillos);
@@ -407,14 +407,15 @@
             this.btnAgregarPlatillo.Size = new System.Drawing.Size(31, 29);
             this.btnAgregarPlatillo.TabIndex = 26;
             this.btnAgregarPlatillo.UseVisualStyleBackColor = false;
+            this.btnAgregarPlatillo.Click += new System.EventHandler(this.btnAgregarPlatillo_Click);
             // 
-            // textBox2
+            // txtIdPedido
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 35);
-            this.textBox2.MaxLength = 7;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 22);
-            this.textBox2.TabIndex = 28;
+            this.txtIdPedido.Location = new System.Drawing.Point(171, 35);
+            this.txtIdPedido.MaxLength = 7;
+            this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.Size = new System.Drawing.Size(144, 22);
+            this.txtIdPedido.TabIndex = 28;
             // 
             // label13
             // 
@@ -571,7 +572,7 @@
         private System.Windows.Forms.ComboBox cbCuiCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpHoraPedido;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIdPedido;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnAgregarPlatillo;
         private System.Windows.Forms.ComboBox cbPlatillos;

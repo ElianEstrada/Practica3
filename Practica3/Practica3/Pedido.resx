@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnAgregarPlatillo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAEySURBVEhL7dQ7SgRBFEbhDowMjEQwFAMzc1+YKoKpkaGYuANdgcswcNyBoaCBKzAXX2AkGAi+
+        0HMHLxSXv6eqVcrAOfAFU9V1G7pgmn/bGT6+XGIDVUpfbF4xjaodwF6+1/9VsXXYi8/7vyo2iie8Y8IW
+        anaM9M5/yykGtgN18KduMbApqIPKPBbDWpsesl1AHY48tRdtI9s+1OHIU3vRDLItQx2OPLWXukNRI3hA
+        HGB3mkvdedH9ekeIAxaQawnxXNH9epuIAyJP7aWK7tcbxxvUIOepPVd8v2n2n62GOU/tuUN0bhdqmLM7
+        V3ea2kLnJvEINbDEPcbwreZgn/wFarjyjBPMYlin1nCDa6zaQkulzxVng/z+rmyhpdLnivuzF9tns6E2
+        bMUWWip9bliNmuYTu9MQlhcsrOMAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -141,16 +153,4 @@
   <metadata name="platillos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAgregarPlatillo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAEySURBVEhL7dQ7SgRBFEbhDowMjEQwFAMzc1+YKoKpkaGYuANdgcswcNyBoaCBKzAXX2AkGAi+
-        0HMHLxSXv6eqVcrAOfAFU9V1G7pgmn/bGT6+XGIDVUpfbF4xjaodwF6+1/9VsXXYi8/7vyo2iie8Y8IW
-        anaM9M5/yykGtgN18KduMbApqIPKPBbDWpsesl1AHY48tRdtI9s+1OHIU3vRDLItQx2OPLWXukNRI3hA
-        HGB3mkvdedH9ekeIAxaQawnxXNH9epuIAyJP7aWK7tcbxxvUIOepPVd8v2n2n62GOU/tuUN0bhdqmLM7
-        V3ea2kLnJvEINbDEPcbwreZgn/wFarjyjBPMYlin1nCDa6zaQkulzxVng/z+rmyhpdLnivuzF9tns6E2
-        bMUWWip9bliNmuYTu9MQlhcsrOMAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

@@ -15,6 +15,6 @@ namespace Entidad
         public int cantidad { get; set; }
         public double precio { get; set; }
         public double subTotal { get; set; }
-
+        public string bebida { get; set; }
     }
 }

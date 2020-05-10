@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Practica3
 {
     public partial class Pedido : Form
     {
+
+        List<PlatilloPedido> platilloPedidos = new List<PlatilloPedido>();
+
         public Pedido()
         {
             InitializeComponent();
@@ -50,6 +54,27 @@ namespace Practica3
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarPlatillo_Click(object sender, EventArgs e)
+        {
+            PlatilloPedido platillo = new PlatilloPedido();
+
+            if(txtIdPedido.Text != "" && cbBebidas.Text != "" && txtCantidad.Text != "" && cbPlatillos.Text != "")
+            {
+                platillo.pedido = int.Parse(txtIdPedido.Text);
+                platillo.platillo = cbPlatillos.Text;
+                platillo.bebida = cbBebidas.Text;
+                platillo.cantidad = int.Parse(txtCantidad.Text);
+
+                platilloPedidos.Add(platillo);
+
+                MessageBox.Show("Platillo Agregado");
+            }
+            else
+            {
+                MessageBox.Show("Por favor Completar los campos de [Bebidas], [Cantidad], [Platillos] y [Número Pedido]");
+            }
         }
     }
 }
