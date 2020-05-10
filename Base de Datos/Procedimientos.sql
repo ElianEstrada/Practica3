@@ -134,3 +134,48 @@ end;
 
 exec existeCliente 3034366110108;
 
+
+select * from PedidoDomicilio;
+
+create procedure add_PedidoDomicilio
+@idPedido int, @hora time, @fecha date, @direccionEntrega text, @cliente numeric(13, 0), @empleado numeric(13,0), @repartidor numeric(13,0), @factura int
+as
+begin
+insert into PedidoDomicilio values (@idPedido, @hora, @fecha, @direccionEntrega, @cliente, @empleado, @repartidor, @factura);
+end;
+
+select * from tipoEmpleado;
+
+create procedure show_Chef
+as
+begin
+select * from Empleado as E
+join tipoEmpleado as TE
+on E.fk_idTipoEmpleado = TE.idTipoEmpleado
+where TE.idTipoEmpleado between 3 and 6
+or TE.idTipoEmpleado = 1;
+end;
+
+exec show_Chef;
+
+exec show_platillos;
+
+create procedure show_bebidas
+as
+begin
+select * from Bebida;
+end;
+
+exec show_bebidas;
+
+insert into Bebida values('Coca-Cola');
+insert into Bebida values('Pepsi');
+insert into Bebida values('Seven Up');
+insert into Bebida values('Mirinda');
+insert into Bebida values('Agua Mineral');
+insert into Bebida values('Agua Pura');
+insert into Bebida values('Té Frio de Frambuesa');
+insert into Bebida values('Té Frio de Durazno');
+insert into Bebida values('Té Frio de Limón');
+insert into Bebida values('Fresco de Naranja');
+insert into Bebida values('Fresco de Melón');
