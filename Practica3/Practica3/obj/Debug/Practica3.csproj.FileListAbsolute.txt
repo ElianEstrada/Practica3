@@ -16,3 +16,4 @@ D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Pract
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.exe
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.pdb
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Pedido.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Tabla_de_Platillos.resources

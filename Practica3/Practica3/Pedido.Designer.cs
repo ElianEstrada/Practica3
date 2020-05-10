@@ -31,6 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.pEmpleado = new System.Windows.Forms.Panel();
             this.gbRegistroEmpleado = new System.Windows.Forms.GroupBox();
+            this.cbChef = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbBebidas = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtIdPedido = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnAgregarPlatillo = new System.Windows.Forms.Button();
+            this.cbPlatillos = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtpHoraPedido = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNit = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbCuiCliente = new System.Windows.Forms.ComboBox();
             this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.cbRepartidor = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,23 +66,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbCuiCliente = new System.Windows.Forms.ComboBox();
-            this.txtNit = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
-            this.dtpHoraPedido = new System.Windows.Forms.DateTimePicker();
-            this.cbPlatillos = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnAgregarPlatillo = new System.Windows.Forms.Button();
-            this.txtIdPedido = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cbBebidas = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,12 +74,14 @@
             this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.platillos = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblTotalPedidos = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTotalPedido = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.lblPlatillos = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblTotalPedidos = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.pEmpleado.SuspendLayout();
             this.gbRegistroEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
@@ -97,6 +101,8 @@
             // 
             // gbRegistroEmpleado
             // 
+            this.gbRegistroEmpleado.Controls.Add(this.cbChef);
+            this.gbRegistroEmpleado.Controls.Add(this.label18);
             this.gbRegistroEmpleado.Controls.Add(this.button2);
             this.gbRegistroEmpleado.Controls.Add(this.button1);
             this.gbRegistroEmpleado.Controls.Add(this.cbBebidas);
@@ -138,6 +144,202 @@
             this.gbRegistroEmpleado.TabStop = false;
             this.gbRegistroEmpleado.Text = "Cantidad:";
             // 
+            // cbChef
+            // 
+            this.cbChef.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbChef.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbChef.FormattingEnabled = true;
+            this.cbChef.Location = new System.Drawing.Point(294, 187);
+            this.cbChef.Name = "cbChef";
+            this.cbChef.Size = new System.Drawing.Size(172, 23);
+            this.cbChef.TabIndex = 36;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(236, 189);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 19);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "Chefs:";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(642, 231);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(168, 35);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Generar Factura";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(455, 231);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 35);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Ver Platillos ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cbBebidas
+            // 
+            this.cbBebidas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbBebidas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbBebidas.FormattingEnabled = true;
+            this.cbBebidas.Location = new System.Drawing.Point(89, 185);
+            this.cbBebidas.Name = "cbBebidas";
+            this.cbBebidas.Size = new System.Drawing.Size(131, 23);
+            this.cbBebidas.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(15, 189);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 19);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Bebidas:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(629, 131);
+            this.txtCantidad.MaxLength = 8;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(129, 22);
+            this.txtCantidad.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(549, 134);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 19);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Cantidad:";
+            // 
+            // txtIdPedido
+            // 
+            this.txtIdPedido.Location = new System.Drawing.Point(171, 35);
+            this.txtIdPedido.MaxLength = 7;
+            this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.Size = new System.Drawing.Size(144, 22);
+            this.txtIdPedido.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(34, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(137, 19);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Número de Pedido:";
+            // 
+            // btnAgregarPlatillo
+            // 
+            this.btnAgregarPlatillo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAgregarPlatillo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarPlatillo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPlatillo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPlatillo.Image")));
+            this.btnAgregarPlatillo.Location = new System.Drawing.Point(1039, 129);
+            this.btnAgregarPlatillo.Name = "btnAgregarPlatillo";
+            this.btnAgregarPlatillo.Size = new System.Drawing.Size(31, 29);
+            this.btnAgregarPlatillo.TabIndex = 26;
+            this.btnAgregarPlatillo.UseVisualStyleBackColor = false;
+            this.btnAgregarPlatillo.Click += new System.EventHandler(this.btnAgregarPlatillo_Click);
+            // 
+            // cbPlatillos
+            // 
+            this.cbPlatillos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbPlatillos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbPlatillos.FormattingEnabled = true;
+            this.cbPlatillos.Location = new System.Drawing.Point(835, 131);
+            this.cbPlatillos.Name = "cbPlatillos";
+            this.cbPlatillos.Size = new System.Drawing.Size(198, 23);
+            this.cbPlatillos.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(764, 133);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 19);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Platillos:";
+            // 
+            // dtpHoraPedido
+            // 
+            this.dtpHoraPedido.CustomFormat = "";
+            this.dtpHoraPedido.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraPedido.Location = new System.Drawing.Point(146, 131);
+            this.dtpHoraPedido.Name = "dtpHoraPedido";
+            this.dtpHoraPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpHoraPedido.ShowUpDown = true;
+            this.dtpHoraPedido.Size = new System.Drawing.Size(111, 22);
+            this.dtpHoraPedido.TabIndex = 23;
+            this.dtpHoraPedido.Value = new System.DateTime(2020, 5, 9, 16, 8, 4, 0);
+            // 
+            // dtpFechaPedido
+            // 
+            this.dtpFechaPedido.CustomFormat = "";
+            this.dtpFechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaPedido.Location = new System.Drawing.Point(423, 131);
+            this.dtpFechaPedido.Name = "dtpFechaPedido";
+            this.dtpFechaPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpFechaPedido.Size = new System.Drawing.Size(111, 22);
+            this.dtpFechaPedido.TabIndex = 22;
+            this.dtpFechaPedido.Value = new System.DateTime(2020, 5, 9, 16, 7, 19, 0);
+            this.dtpFechaPedido.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(290, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 19);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Fecha del Pedido:";
+            // 
+            // txtNit
+            // 
+            this.txtNit.Location = new System.Drawing.Point(642, 35);
+            this.txtNit.MaxLength = 7;
+            this.txtNit.Name = "txtNit";
+            this.txtNit.Size = new System.Drawing.Size(144, 22);
+            this.txtNit.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(595, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 19);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "NIT:";
+            // 
+            // cbCuiCliente
+            // 
+            this.cbCuiCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbCuiCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCuiCliente.FormattingEnabled = true;
+            this.cbCuiCliente.Location = new System.Drawing.Point(393, 34);
+            this.cbCuiCliente.Name = "cbCuiCliente";
+            this.cbCuiCliente.Size = new System.Drawing.Size(172, 23);
+            this.cbCuiCliente.TabIndex = 17;
+            // 
             // btnAgregarPedido
             // 
             this.btnAgregarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -153,7 +355,7 @@
             // cbRepartidor
             // 
             this.cbRepartidor.FormattingEnabled = true;
-            this.cbRepartidor.Location = new System.Drawing.Point(793, 186);
+            this.cbRepartidor.Location = new System.Drawing.Point(867, 185);
             this.cbRepartidor.Name = "cbRepartidor";
             this.cbRepartidor.Size = new System.Drawing.Size(198, 23);
             this.cbRepartidor.TabIndex = 15;
@@ -162,7 +364,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(707, 188);
+            this.label9.Location = new System.Drawing.Point(781, 187);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 19);
             this.label9.TabIndex = 14;
@@ -171,7 +373,7 @@
             // cbEmpledoPedido
             // 
             this.cbEmpledoPedido.FormattingEnabled = true;
-            this.cbEmpledoPedido.Location = new System.Drawing.Point(465, 186);
+            this.cbEmpledoPedido.Location = new System.Drawing.Point(586, 185);
             this.cbEmpledoPedido.Name = "cbEmpledoPedido";
             this.cbEmpledoPedido.Size = new System.Drawing.Size(172, 23);
             this.cbEmpledoPedido.TabIndex = 13;
@@ -180,7 +382,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(375, 189);
+            this.label8.Location = new System.Drawing.Point(496, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 19);
             this.label8.TabIndex = 12;
@@ -303,181 +505,6 @@
             this.dgvPedidos.Size = new System.Drawing.Size(1106, 225);
             this.dgvPedidos.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(407, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Pedidos a Domicilio";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Controls.Add(this.lblPlatillos);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.lblTotalPedidos);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 592);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 22);
-            this.panel1.TabIndex = 6;
-            // 
-            // cbCuiCliente
-            // 
-            this.cbCuiCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbCuiCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbCuiCliente.FormattingEnabled = true;
-            this.cbCuiCliente.Location = new System.Drawing.Point(393, 34);
-            this.cbCuiCliente.Name = "cbCuiCliente";
-            this.cbCuiCliente.Size = new System.Drawing.Size(172, 23);
-            this.cbCuiCliente.TabIndex = 17;
-            // 
-            // txtNit
-            // 
-            this.txtNit.Location = new System.Drawing.Point(642, 35);
-            this.txtNit.MaxLength = 7;
-            this.txtNit.Name = "txtNit";
-            this.txtNit.Size = new System.Drawing.Size(144, 22);
-            this.txtNit.TabIndex = 19;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(595, 38);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 19);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "NIT:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(290, 134);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 19);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Fecha del Pedido:";
-            // 
-            // dtpFechaPedido
-            // 
-            this.dtpFechaPedido.CustomFormat = "";
-            this.dtpFechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaPedido.Location = new System.Drawing.Point(423, 131);
-            this.dtpFechaPedido.Name = "dtpFechaPedido";
-            this.dtpFechaPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtpFechaPedido.Size = new System.Drawing.Size(111, 22);
-            this.dtpFechaPedido.TabIndex = 22;
-            this.dtpFechaPedido.Value = new System.DateTime(2020, 5, 9, 16, 7, 19, 0);
-            this.dtpFechaPedido.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // dtpHoraPedido
-            // 
-            this.dtpHoraPedido.CustomFormat = "";
-            this.dtpHoraPedido.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraPedido.Location = new System.Drawing.Point(146, 131);
-            this.dtpHoraPedido.Name = "dtpHoraPedido";
-            this.dtpHoraPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtpHoraPedido.ShowUpDown = true;
-            this.dtpHoraPedido.Size = new System.Drawing.Size(111, 22);
-            this.dtpHoraPedido.TabIndex = 23;
-            this.dtpHoraPedido.Value = new System.DateTime(2020, 5, 9, 16, 8, 4, 0);
-            // 
-            // cbPlatillos
-            // 
-            this.cbPlatillos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbPlatillos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbPlatillos.FormattingEnabled = true;
-            this.cbPlatillos.Location = new System.Drawing.Point(835, 131);
-            this.cbPlatillos.Name = "cbPlatillos";
-            this.cbPlatillos.Size = new System.Drawing.Size(198, 23);
-            this.cbPlatillos.TabIndex = 25;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(764, 133);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 19);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Platillos:";
-            // 
-            // btnAgregarPlatillo
-            // 
-            this.btnAgregarPlatillo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnAgregarPlatillo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregarPlatillo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPlatillo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPlatillo.Image")));
-            this.btnAgregarPlatillo.Location = new System.Drawing.Point(1039, 129);
-            this.btnAgregarPlatillo.Name = "btnAgregarPlatillo";
-            this.btnAgregarPlatillo.Size = new System.Drawing.Size(31, 29);
-            this.btnAgregarPlatillo.TabIndex = 26;
-            this.btnAgregarPlatillo.UseVisualStyleBackColor = false;
-            this.btnAgregarPlatillo.Click += new System.EventHandler(this.btnAgregarPlatillo_Click);
-            // 
-            // txtIdPedido
-            // 
-            this.txtIdPedido.Location = new System.Drawing.Point(171, 35);
-            this.txtIdPedido.MaxLength = 7;
-            this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(144, 22);
-            this.txtIdPedido.TabIndex = 28;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 19);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Número de Pedido:";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(629, 131);
-            this.txtCantidad.MaxLength = 8;
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(129, 22);
-            this.txtCantidad.TabIndex = 30;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(549, 134);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 19);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Cantidad:";
-            // 
-            // cbBebidas
-            // 
-            this.cbBebidas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbBebidas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbBebidas.FormattingEnabled = true;
-            this.cbBebidas.Location = new System.Drawing.Point(137, 187);
-            this.cbBebidas.Name = "cbBebidas";
-            this.cbBebidas.Size = new System.Drawing.Size(172, 23);
-            this.cbBebidas.TabIndex = 32;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(47, 190);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 19);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Bebidas:";
-            // 
             // id
             // 
             this.id.Frozen = true;
@@ -538,50 +565,62 @@
             this.platillos.Name = "platillos";
             this.platillos.ReadOnly = true;
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(455, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 35);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Ver Platillos ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(407, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 40);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Pedidos a Domicilio";
             // 
-            // button2
+            // panel1
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(642, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 35);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Generar Factura";
-            this.button2.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.lblTotalPedido);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.lblPlatillos);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.lblTotalPedidos);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 592);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1106, 22);
+            this.panel1.TabIndex = 6;
             // 
-            // label16
+            // lblTotalPedido
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(12, 6);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Total de Pedidos:";
+            this.lblTotalPedido.AutoSize = true;
+            this.lblTotalPedido.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPedido.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPedido.Location = new System.Drawing.Point(548, 5);
+            this.lblTotalPedido.Name = "lblTotalPedido";
+            this.lblTotalPedido.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalPedido.TabIndex = 5;
             // 
-            // lblTotalPedidos
+            // label19
             // 
-            this.lblTotalPedidos.AutoSize = true;
-            this.lblTotalPedidos.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPedidos.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPedidos.Location = new System.Drawing.Point(112, 6);
-            this.lblTotalPedidos.Name = "lblTotalPedidos";
-            this.lblTotalPedidos.Size = new System.Drawing.Size(0, 13);
-            this.lblTotalPedidos.TabIndex = 1;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(453, 6);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(93, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Total del Pedido:";
+            // 
+            // lblPlatillos
+            // 
+            this.lblPlatillos.AutoSize = true;
+            this.lblPlatillos.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlatillos.ForeColor = System.Drawing.Color.White;
+            this.lblPlatillos.Location = new System.Drawing.Point(328, 6);
+            this.lblPlatillos.Name = "lblPlatillos";
+            this.lblPlatillos.Size = new System.Drawing.Size(0, 13);
+            this.lblPlatillos.TabIndex = 3;
             // 
             // label17
             // 
@@ -594,15 +633,26 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "Platillos Agregados:";
             // 
-            // lblPlatillos
+            // lblTotalPedidos
             // 
-            this.lblPlatillos.AutoSize = true;
-            this.lblPlatillos.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlatillos.ForeColor = System.Drawing.Color.White;
-            this.lblPlatillos.Location = new System.Drawing.Point(328, 6);
-            this.lblPlatillos.Name = "lblPlatillos";
-            this.lblPlatillos.Size = new System.Drawing.Size(0, 13);
-            this.lblPlatillos.TabIndex = 3;
+            this.lblTotalPedidos.AutoSize = true;
+            this.lblTotalPedidos.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPedidos.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPedidos.Location = new System.Drawing.Point(112, 6);
+            this.lblTotalPedidos.Name = "lblTotalPedidos";
+            this.lblTotalPedidos.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalPedidos.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(12, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(94, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Total de Pedidos:";
             // 
             // Pedido
             // 
@@ -613,6 +663,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pEmpleado);
             this.Name = "Pedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedido";
             this.pEmpleado.ResumeLayout(false);
             this.pEmpleado.PerformLayout();
@@ -676,5 +727,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblTotalPedidos;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cbChef;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblTotalPedido;
+        private System.Windows.Forms.Label label19;
     }
 }

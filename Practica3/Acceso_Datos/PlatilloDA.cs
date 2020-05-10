@@ -78,5 +78,33 @@ namespace Acceso_Datos
             return bebidas;
         }
 
+        public double precioPlatillo (int idPlatillo)
+        {
+
+            try
+            {
+
+                cmd = new SqlCommand("searchPlatillo", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idPlatillo", idPlatillo);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return double.Parse(reader[2].ToString());
+                }
+
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+            return 0;
+
+        }
+
     }
 }

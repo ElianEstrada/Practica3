@@ -49,5 +49,68 @@ namespace Acceso_Datos
             return clientes;
         }
 
+        public bool existeCliente(long cui)
+        {
+
+            try
+            {
+
+                cmd = new SqlCommand("existeCliente", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cuiCliente", cui);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            return false;
+        }
+
+        public long addCliente(long cui, string nombre, string apellido, int celular, string nit)
+        {
+
+            try
+            {
+
+                if (!existeCliente(cui))
+                {
+                    cmd = new SqlCommand("add_cliente", conexion.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@cui", cui);
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Parameters.AddWithValue("@apellido", apellido);
+                    cmd.Parameters.AddWithValue("@celular", celular);
+                    cmd.Parameters.AddWithValue("@nit", nit);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    int filas = reader.RecordsAffected;
+
+                    if (filas != 0)
+                    {
+                        return cui;
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+            return 0;
+        }
+
     }
+
 }

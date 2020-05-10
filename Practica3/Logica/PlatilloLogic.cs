@@ -22,5 +22,16 @@ namespace Logica
         {
             return platilloDA.listaBebidas();
         }
+
+        public double precioPlatillo (string idPlatillo)
+        {
+            return platilloDA.precioPlatillo(arreglarIdPlatillo(idPlatillo));
+        }
+
+        public int arreglarIdPlatillo(string idplatillo)
+        {
+            string[] idTipo = idplatillo.Split('.');
+            return int.Parse(idTipo[1]);
+        }
     }
 }

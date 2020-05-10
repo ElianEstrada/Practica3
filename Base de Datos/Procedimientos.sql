@@ -186,3 +186,16 @@ exec show_jefes;
 exec show_TipoEmpleado;
 exec show_Empleado;
 exec show_clientes;
+exec show_Chef;
+
+create procedure searchPlatillo
+@idPlatillo int
+as
+begin
+select * from platillo as P
+where P.idPlatillo = @idPlatillo;
+end;
+
+
+select * from platillo as P
+where P.idPlatillo = 1;

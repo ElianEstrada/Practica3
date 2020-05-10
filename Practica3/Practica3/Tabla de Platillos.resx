@@ -118,39 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAgregarPlatillo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRegresar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATJJREFUSEvt
-        1DtKBEEURuEOjAyMRDAUAzNzX5gqgqmRoZi4A12ByzBw3IGhoIErMBdfYCQYCL7QcwcvFJe/p6pVysA5
-        8AVT1XUbumCaf9sZPr5cYgNVSl9sXjGNqh3AXr7X/1WxddiLz/u/KjaKJ7xjwhZqdoz0zn/LKQa2A3Xw
-        p24xsCmog8o8FsNamx6yXUAdjjy1F20j2z7U4chTe9EMsi1DHY48tZe6Q1EjeEAcYHeaS9150f16R4gD
-        FpBrCfFc0f16m4gDIk/tpYru1xvHG9Qg56k9V3y/afafrYY5T+25Q3RuF2qYsztXd5raQucm8Qg1sMQ9
-        xvCt5mCf/AVquPKME8xiWKfWcINrrNpCS6XPFWeD/P6ubKGl0ueK+7MX22ezoTZsxRZaKn1uWI2a5hO7
-        0xCWFyys4wAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAEgSURBVEhL7Za9SsRAFEZj7U8hKFpsZ2GpvZ0PZaE+hyi+gNpYWSoqIoo2Ctra+QNbaSnoObME
+        ZMEkS5K7TQ4cMvcW8+1MJslmHeNmHu/xPFVBGPqIP3hjI4I5fEBDn3EBW2csoXKHhtbxC/3Re7iOlWgi
+        eNgzXMJC/h4qr9ajMokruIlv6Fx9XMNCmgjPmcYDzMNHWvmtjRpM4CE616mNMgz3nl+nqh6u/B0Nr3zg
+        mmILDd5NVSAeOIN91EKZQoM/UxXIDBqsoeRbfZyqQLbR4I1UBeE2f+A39mxE4AvkCF3tvo0IXGke+oKz
+        2Bo+NqvoPXV7DX3FZfyXK7wcDBNltWMnLvIEF7EQJ7oYDBNV6uEg/wg84Q6Wfgo7Ology34B66d43270
+        G74AAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="nombreEmpleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="direccion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="apellidoEmpleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="telefono.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="sueldo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tipo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="platillos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

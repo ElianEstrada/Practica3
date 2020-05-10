@@ -116,6 +116,43 @@ namespace Acceso_Datos
             return empleados;
         }
 
+        public LinkedList<Empleado> listaChefs()
+        {
+            LinkedList<Empleado> chefs = new LinkedList<Empleado>();
+
+            try
+            {
+
+                cmd = new SqlCommand("show_Chef", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Empleado chef = new Empleado();
+
+                    chef.cui = long.Parse(reader[0].ToString());
+                    chef.nombre = reader[1].ToString();
+                    chef.apellido = reader[2].ToString();
+                    chef.telefono = int.Parse(reader[3].ToString());
+                    chef.direccion = reader[4].ToString();
+                    chef.sueldo = double.Parse(reader[5].ToString());
+                    chef.jefe = reader[6].ToString();
+                    chef.tipoEmpleado = reader[7].ToString();
+
+                    chefs.AddLast(chef);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return chefs;
+        }
+
         public bool addEmpleado(long cui, string nombre, string apellido, int telefono, string direccion, double sueldo, int? bono, long? jefe, int tipo)
         {
 
@@ -190,6 +227,8 @@ namespace Acceso_Datos
 
             return false;
         }
+
+       
 
     }
 }
