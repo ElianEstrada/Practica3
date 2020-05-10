@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.pEmpleado = new System.Windows.Forms.Panel();
             this.gbRegistroEmpleado = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbJefes = new System.Windows.Forms.ComboBox();
+            this.btnAgregarPedido = new System.Windows.Forms.Button();
+            this.cbRepartidor = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbTipoEmpleado = new System.Windows.Forms.ComboBox();
+            this.cbEmpledoPedido = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -46,39 +46,41 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbCuiCliente = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNit = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
             this.dtpHoraPedido = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPlatillos = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregarPlatillo = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.cbBebidas = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.platillos = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pEmpleado.SuspendLayout();
             this.gbRegistroEmpleado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // pEmpleado
             // 
             this.pEmpleado.Controls.Add(this.gbRegistroEmpleado);
-            this.pEmpleado.Controls.Add(this.dgvEmpleados);
+            this.pEmpleado.Controls.Add(this.dgvPedidos);
             this.pEmpleado.Controls.Add(this.label1);
             this.pEmpleado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pEmpleado.Location = new System.Drawing.Point(0, 0);
@@ -88,23 +90,25 @@
             // 
             // gbRegistroEmpleado
             // 
-            this.gbRegistroEmpleado.Controls.Add(this.textBox3);
+            this.gbRegistroEmpleado.Controls.Add(this.cbBebidas);
+            this.gbRegistroEmpleado.Controls.Add(this.label15);
+            this.gbRegistroEmpleado.Controls.Add(this.txtCantidad);
             this.gbRegistroEmpleado.Controls.Add(this.label14);
             this.gbRegistroEmpleado.Controls.Add(this.textBox2);
             this.gbRegistroEmpleado.Controls.Add(this.label13);
-            this.gbRegistroEmpleado.Controls.Add(this.button2);
-            this.gbRegistroEmpleado.Controls.Add(this.comboBox1);
+            this.gbRegistroEmpleado.Controls.Add(this.btnAgregarPlatillo);
+            this.gbRegistroEmpleado.Controls.Add(this.cbPlatillos);
             this.gbRegistroEmpleado.Controls.Add(this.label12);
             this.gbRegistroEmpleado.Controls.Add(this.dtpHoraPedido);
             this.gbRegistroEmpleado.Controls.Add(this.dtpFechaPedido);
             this.gbRegistroEmpleado.Controls.Add(this.label11);
-            this.gbRegistroEmpleado.Controls.Add(this.textBox1);
+            this.gbRegistroEmpleado.Controls.Add(this.txtNit);
             this.gbRegistroEmpleado.Controls.Add(this.label10);
             this.gbRegistroEmpleado.Controls.Add(this.cbCuiCliente);
-            this.gbRegistroEmpleado.Controls.Add(this.button1);
-            this.gbRegistroEmpleado.Controls.Add(this.cbJefes);
+            this.gbRegistroEmpleado.Controls.Add(this.btnAgregarPedido);
+            this.gbRegistroEmpleado.Controls.Add(this.cbRepartidor);
             this.gbRegistroEmpleado.Controls.Add(this.label9);
-            this.gbRegistroEmpleado.Controls.Add(this.cbTipoEmpleado);
+            this.gbRegistroEmpleado.Controls.Add(this.cbEmpledoPedido);
             this.gbRegistroEmpleado.Controls.Add(this.label8);
             this.gbRegistroEmpleado.Controls.Add(this.label7);
             this.gbRegistroEmpleado.Controls.Add(this.txtDireccion);
@@ -125,49 +129,49 @@
             this.gbRegistroEmpleado.TabStop = false;
             this.gbRegistroEmpleado.Text = "Cantidad:";
             // 
-            // button1
+            // btnAgregarPedido
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(500, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 35);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Agregar Empleado";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAgregarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAgregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarPedido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPedido.Location = new System.Drawing.Point(455, 231);
+            this.btnAgregarPedido.Name = "btnAgregarPedido";
+            this.btnAgregarPedido.Size = new System.Drawing.Size(168, 35);
+            this.btnAgregarPedido.TabIndex = 16;
+            this.btnAgregarPedido.Text = "Agregar Pedido";
+            this.btnAgregarPedido.UseVisualStyleBackColor = false;
             // 
-            // cbJefes
+            // cbRepartidor
             // 
-            this.cbJefes.FormattingEnabled = true;
-            this.cbJefes.Location = new System.Drawing.Point(673, 186);
-            this.cbJefes.Name = "cbJefes";
-            this.cbJefes.Size = new System.Drawing.Size(198, 23);
-            this.cbJefes.TabIndex = 15;
+            this.cbRepartidor.FormattingEnabled = true;
+            this.cbRepartidor.Location = new System.Drawing.Point(793, 186);
+            this.cbRepartidor.Name = "cbRepartidor";
+            this.cbRepartidor.Size = new System.Drawing.Size(198, 23);
+            this.cbRepartidor.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(587, 188);
+            this.label9.Location = new System.Drawing.Point(707, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 19);
             this.label9.TabIndex = 14;
             this.label9.Text = "Repartidor:";
             // 
-            // cbTipoEmpleado
+            // cbEmpledoPedido
             // 
-            this.cbTipoEmpleado.FormattingEnabled = true;
-            this.cbTipoEmpleado.Location = new System.Drawing.Point(306, 186);
-            this.cbTipoEmpleado.Name = "cbTipoEmpleado";
-            this.cbTipoEmpleado.Size = new System.Drawing.Size(172, 23);
-            this.cbTipoEmpleado.TabIndex = 13;
+            this.cbEmpledoPedido.FormattingEnabled = true;
+            this.cbEmpledoPedido.Location = new System.Drawing.Point(465, 186);
+            this.cbEmpledoPedido.Name = "cbEmpledoPedido";
+            this.cbEmpledoPedido.Size = new System.Drawing.Size(172, 23);
+            this.cbEmpledoPedido.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(216, 189);
+            this.label8.Location = new System.Drawing.Point(375, 189);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 19);
             this.label8.TabIndex = 12;
@@ -268,79 +272,27 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "CUI:";
             // 
-            // dgvEmpleados
+            // dgvPedidos
             // 
-            this.dgvEmpleados.AllowUserToAddRows = false;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nombreEmpleado,
+            this.direccion,
             this.apellidoEmpleado,
             this.telefono,
-            this.direccion,
             this.sueldo,
             this.tipo,
-            this.jefe});
-            this.dgvEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvEmpleados.Location = new System.Drawing.Point(0, 389);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1106, 225);
-            this.dgvEmpleados.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Cui Empleado";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // nombreEmpleado
-            // 
-            this.nombreEmpleado.HeaderText = "Nombres";
-            this.nombreEmpleado.Name = "nombreEmpleado";
-            this.nombreEmpleado.ReadOnly = true;
-            this.nombreEmpleado.Width = 120;
-            // 
-            // apellidoEmpleado
-            // 
-            this.apellidoEmpleado.HeaderText = "Apellidos";
-            this.apellidoEmpleado.Name = "apellidoEmpleado";
-            this.apellidoEmpleado.ReadOnly = true;
-            this.apellidoEmpleado.Width = 120;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Dirección";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Width = 272;
-            // 
-            // sueldo
-            // 
-            this.sueldo.HeaderText = "Sueldo";
-            this.sueldo.Name = "sueldo";
-            this.sueldo.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "TipoEmpleado";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // jefe
-            // 
-            this.jefe.HeaderText = "Jefe";
-            this.jefe.Name = "jefe";
-            this.jefe.ReadOnly = true;
-            this.jefe.Width = 150;
+            this.platillos});
+            this.dgvPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvPedidos.Location = new System.Drawing.Point(0, 389);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
+            this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPedidos.Size = new System.Drawing.Size(1106, 225);
+            this.dgvPedidos.TabIndex = 0;
             // 
             // label1
             // 
@@ -364,19 +316,21 @@
             // 
             // cbCuiCliente
             // 
+            this.cbCuiCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbCuiCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbCuiCliente.FormattingEnabled = true;
             this.cbCuiCliente.Location = new System.Drawing.Point(393, 34);
             this.cbCuiCliente.Name = "cbCuiCliente";
             this.cbCuiCliente.Size = new System.Drawing.Size(172, 23);
             this.cbCuiCliente.TabIndex = 17;
             // 
-            // textBox1
+            // txtNit
             // 
-            this.textBox1.Location = new System.Drawing.Point(642, 35);
-            this.textBox1.MaxLength = 7;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 22);
-            this.textBox1.TabIndex = 19;
+            this.txtNit.Location = new System.Drawing.Point(642, 35);
+            this.txtNit.MaxLength = 7;
+            this.txtNit.Name = "txtNit";
+            this.txtNit.Size = new System.Drawing.Size(144, 22);
+            this.txtNit.TabIndex = 19;
             // 
             // label10
             // 
@@ -422,13 +376,15 @@
             this.dtpHoraPedido.TabIndex = 23;
             this.dtpHoraPedido.Value = new System.DateTime(2020, 5, 9, 16, 8, 4, 0);
             // 
-            // comboBox1
+            // cbPlatillos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(835, 131);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 23);
-            this.comboBox1.TabIndex = 25;
+            this.cbPlatillos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbPlatillos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbPlatillos.FormattingEnabled = true;
+            this.cbPlatillos.Location = new System.Drawing.Point(835, 131);
+            this.cbPlatillos.Name = "cbPlatillos";
+            this.cbPlatillos.Size = new System.Drawing.Size(198, 23);
+            this.cbPlatillos.TabIndex = 25;
             // 
             // label12
             // 
@@ -440,17 +396,17 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Platillos:";
             // 
-            // button2
+            // btnAgregarPlatillo
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1039, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(31, 29);
-            this.button2.TabIndex = 26;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAgregarPlatillo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAgregarPlatillo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarPlatillo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPlatillo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPlatillo.Image")));
+            this.btnAgregarPlatillo.Location = new System.Drawing.Point(1039, 129);
+            this.btnAgregarPlatillo.Name = "btnAgregarPlatillo";
+            this.btnAgregarPlatillo.Size = new System.Drawing.Size(31, 29);
+            this.btnAgregarPlatillo.TabIndex = 26;
+            this.btnAgregarPlatillo.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
@@ -470,13 +426,13 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Número de Pedido:";
             // 
-            // textBox3
+            // txtCantidad
             // 
-            this.textBox3.Location = new System.Drawing.Point(629, 131);
-            this.textBox3.MaxLength = 8;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(129, 22);
-            this.textBox3.TabIndex = 30;
+            this.txtCantidad.Location = new System.Drawing.Point(629, 131);
+            this.txtCantidad.MaxLength = 8;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(129, 22);
+            this.txtCantidad.TabIndex = 30;
             // 
             // label14
             // 
@@ -487,6 +443,86 @@
             this.label14.Size = new System.Drawing.Size(74, 19);
             this.label14.TabIndex = 29;
             this.label14.Text = "Cantidad:";
+            // 
+            // cbBebidas
+            // 
+            this.cbBebidas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbBebidas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbBebidas.FormattingEnabled = true;
+            this.cbBebidas.Location = new System.Drawing.Point(137, 187);
+            this.cbBebidas.Name = "cbBebidas";
+            this.cbBebidas.Size = new System.Drawing.Size(172, 23);
+            this.cbBebidas.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(47, 190);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 19);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Bebidas:";
+            // 
+            // id
+            // 
+            this.id.Frozen = true;
+            this.id.HeaderText = "Número Pedido";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 150;
+            // 
+            // nombreEmpleado
+            // 
+            this.nombreEmpleado.Frozen = true;
+            this.nombreEmpleado.HeaderText = "Cliente";
+            this.nombreEmpleado.Name = "nombreEmpleado";
+            this.nombreEmpleado.ReadOnly = true;
+            this.nombreEmpleado.Width = 120;
+            // 
+            // direccion
+            // 
+            this.direccion.Frozen = true;
+            this.direccion.HeaderText = "Dirección";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 272;
+            // 
+            // apellidoEmpleado
+            // 
+            this.apellidoEmpleado.Frozen = true;
+            this.apellidoEmpleado.HeaderText = "Fecha";
+            this.apellidoEmpleado.Name = "apellidoEmpleado";
+            this.apellidoEmpleado.ReadOnly = true;
+            this.apellidoEmpleado.Width = 120;
+            // 
+            // telefono
+            // 
+            this.telefono.Frozen = true;
+            this.telefono.HeaderText = "Hora";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // sueldo
+            // 
+            this.sueldo.Frozen = true;
+            this.sueldo.HeaderText = "Empleado";
+            this.sueldo.Name = "sueldo";
+            this.sueldo.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.Frozen = true;
+            this.tipo.HeaderText = "Repartidor";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // platillos
+            // 
+            this.platillos.Frozen = true;
+            this.platillos.HeaderText = "Ver Platillos";
+            this.platillos.Name = "platillos";
+            this.platillos.ReadOnly = true;
             // 
             // Pedido
             // 
@@ -502,7 +538,7 @@
             this.pEmpleado.PerformLayout();
             this.gbRegistroEmpleado.ResumeLayout(false);
             this.gbRegistroEmpleado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,10 +547,10 @@
 
         private System.Windows.Forms.Panel pEmpleado;
         private System.Windows.Forms.GroupBox gbRegistroEmpleado;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbJefes;
+        private System.Windows.Forms.Button btnAgregarPedido;
+        private System.Windows.Forms.ComboBox cbRepartidor;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbTipoEmpleado;
+        private System.Windows.Forms.ComboBox cbEmpledoPedido;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -526,29 +562,31 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jefe;
+        private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFechaPedido;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNit;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbCuiCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpHoraPedido;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAgregarPlatillo;
+        private System.Windows.Forms.ComboBox cbPlatillos;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbBebidas;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewButtonColumn platillos;
     }
 }
