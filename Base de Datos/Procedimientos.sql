@@ -301,3 +301,88 @@ begin
 update Empleado set bono += 20
 where Empleado.fk_idTipoEmpleado = 8 and Empleado.cuiEmpleado = @cui;
 end;
+
+
+--Reporte de Repartidor con mas entregas
+select COUNT(E.cuiEmpleado) as Entregas, E.nombre, E.apellido, E.sueldo, E.bono from Empleado as E
+join PedidoDomicilio as PD
+on PD.fk_repartidor = E.cuiEmpleado
+group by E.nombre, E.apellido,E.sueldo, E.bono
+order by Entregas desc;
+
+
+
+
+
+--Rorte de Empleado con Mas ingresos de ordenes.
+select COUNT(E.cuiEmpleado) as Ingresos, E.nombre, E.apellido, E.sueldo from Empleado as E
+join PedidoDomicilio as PD
+on PD.fk_empleado = E.cuiEmpleado
+group by E.nombre, E.apellido, E.sueldo
+order by Ingresos desc;
+
+
+
+
+--Reporte de mas platillos ordenados
+--Versión 1
+select SUM(PP.cantidad) as Ordenados, P.nombre, P.precio from platillo as P
+join Pedido_Platillo as PP
+on PP.fk_platillo = P.idPlatillo
+group by P.nombre, P.precio
+order by Ordenados desc;
+
+
+--Version 2
+select COUNT(P.idPlatillo) as Ordenados, P.nombre, P.precio from platillo as P
+join Pedido_Platillo as PP
+on PP.fk_platillo = P.idPlatillo
+group by P.nombre, P.precio
+order by Ordenados desc;
+
+
+
+
+
+select MONTH(F.fecha) as Mes from Factura as F;
+select DAY(F.fecha) as Dia, MONTH(F.fecha) as Mes from Factura as F;
+
+select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
+where MONTH(F.fecha) = 5;
+
+select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
+where DAY(F.fecha) = 9 and MONTH(F.fecha) = 5;
+
+declare @cantidad int = (select COUNT(E.cuiEmpleado) as Pedidos from Empleado as E join Chef_Platillo as CP on CP.fk_chef = E.cuiEmpleado group by cuiEmpleado)
+
+select SUM(CP.cantidad) as pedidos, E.cuiEmpleado, E.nombre, E.apellido from Empleado as E 
+join Chef_Platillo as CP 
+on CP.fk_chef = E.cuiEmpleado 
+group by cuiEmpleado, E.nombre, E.apellido 
+order by pedidos desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select * from Empleado as E
+join Chef_Platillo as CP
+on CP.fk_chef = E.cuiEmpleado
+where E.cuiEmpleado = 3034366110110;
+
+delete from Chef_Platillo;
+
+delete from Pedido_Platillo;
+delete from PedidoDomicilio;
+delete from Factura;
+
+select * from Factura;

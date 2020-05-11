@@ -35,10 +35,10 @@ namespace Practica3
 
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
-            if (factura.agregarFactura(int.Parse(txtNumeroFactura.Text), txtSerieFactura.Text, txtDireccion.Text, dtpHoraPedido.Text, dtpFechaPedido.Text, double.Parse(txtTotalFactura.Text)))
+            if (factura.agregarFactura(int.Parse(txtNumeroFactura.Text), txtSerieFactura.Text, txtDireccion.Text, dtpHoraPedido.Text, dtpFechaPedido.Value, double.Parse(txtTotalFactura.Text)))
             {
                 MessageBox.Show("Factura Agregada Con exito");
-                if(pedidoDomicilio.add_PedidoDomicilio(pedido1.idPedido, pedido1.hora, dtpFechaPedido.Text, txtDireccion.Text, pedido1.cuicliente, pedido1.empleado, pedido1.repartidor, int.Parse(txtNumeroFactura.Text)))
+                if(pedidoDomicilio.add_PedidoDomicilio(pedido1.idPedido, pedido1.hora, dtpFechaPedido.Value, txtDireccion.Text, pedido1.cuicliente, pedido1.empleado, pedido1.repartidor, int.Parse(txtNumeroFactura.Text)))
                 {
                     MessageBox.Show("Pedido Agregado");
                     foreach (var item in platillos)

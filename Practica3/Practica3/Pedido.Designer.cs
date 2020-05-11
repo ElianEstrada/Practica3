@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.pEmpleado = new System.Windows.Forms.Panel();
             this.gbRegistroEmpleado = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.cbChef = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnFacturas = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lblTotalPedidos = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.pEmpleado.SuspendLayout();
             this.gbRegistroEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
@@ -95,10 +95,9 @@
             this.pEmpleado.Controls.Add(this.gbRegistroEmpleado);
             this.pEmpleado.Controls.Add(this.dgvPedidos);
             this.pEmpleado.Controls.Add(this.label1);
-            this.pEmpleado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pEmpleado.Location = new System.Drawing.Point(0, 0);
             this.pEmpleado.Name = "pEmpleado";
-            this.pEmpleado.Size = new System.Drawing.Size(1106, 614);
+            this.pEmpleado.Size = new System.Drawing.Size(1106, 619);
             this.pEmpleado.TabIndex = 5;
             // 
             // gbRegistroEmpleado
@@ -146,6 +145,19 @@
             this.gbRegistroEmpleado.TabIndex = 3;
             this.gbRegistroEmpleado.TabStop = false;
             this.gbRegistroEmpleado.Text = "Cantidad:";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(717, 231);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(168, 35);
+            this.btnSalir.TabIndex = 37;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // cbChef
             // 
@@ -505,7 +517,7 @@
             this.Column1});
             this.dgvPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPedidos.Location = new System.Drawing.Point(0, 389);
+            this.dgvPedidos.Location = new System.Drawing.Point(0, 394);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -601,9 +613,9 @@
             this.panel1.Controls.Add(this.lblTotalPedidos);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 592);
+            this.panel1.Location = new System.Drawing.Point(0, 617);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 22);
+            this.panel1.Size = new System.Drawing.Size(1106, 32);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -670,25 +682,12 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Total de Pedidos:";
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(717, 231);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(168, 35);
-            this.btnSalir.TabIndex = 37;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1106, 614);
+            this.ClientSize = new System.Drawing.Size(1106, 649);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pEmpleado);

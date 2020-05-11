@@ -13,7 +13,7 @@ namespace Logica
 
         FacturaDA facturaDA = new FacturaDA();
 
-        public bool agregarFactura(int idFactura, string serie, string direccion, string hora, string fecha, double total)
+        public bool agregarFactura(int idFactura, string serie, string direccion, string hora, DateTime fecha, double total)
         {
             return facturaDA.add_Factura(idFactura, serie, direccion, String.Format("{0:HH:mm:ss}", hora), String.Format("{0:yyyy-MM-dd}", fecha), total);
         }
