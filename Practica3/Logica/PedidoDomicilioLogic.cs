@@ -1,4 +1,5 @@
 ﻿using Acceso_Datos;
+using Entidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace Logica
         public bool add_PedidoDomicilio(int idPedido, string hora, string fecha, string direccion, long cliente, string empleado, string repartidor, int factura)
         {
             return pedidoDomicilioDA.add_PedidoDomicilio(idPedido, String.Format("{0:HH:mm:ss}", hora), String.Format("{0:yyyy-MM-dd}", fecha), direccion, cliente, arreglarEmpleados(empleado), arreglarEmpleados(repartidor), factura);
+        }
+
+        public LinkedList<Pedido> listaPedidos()
+        {
+            return pedidoDomicilioDA.listaPedidos();
         }
 
         public long arreglarEmpleados(string empleado)

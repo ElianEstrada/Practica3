@@ -16,5 +16,25 @@ namespace Practica3
         {
             InitializeComponent();
         }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            Pedido pedido = new Pedido();
+            this.Hide();
+            pedido.Show();
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            Empleado empleado = new Empleado();
+            this.Hide();
+            empleado.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
     }
 }

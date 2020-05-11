@@ -33,7 +33,7 @@
             this.gbRegistroEmpleado = new System.Windows.Forms.GroupBox();
             this.cbChef = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFacturas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cbBebidas = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -73,7 +73,8 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.platillos = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTotalPedido = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lblTotalPedidos = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.pEmpleado.SuspendLayout();
             this.gbRegistroEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
@@ -101,9 +103,10 @@
             // 
             // gbRegistroEmpleado
             // 
+            this.gbRegistroEmpleado.Controls.Add(this.btnSalir);
             this.gbRegistroEmpleado.Controls.Add(this.cbChef);
             this.gbRegistroEmpleado.Controls.Add(this.label18);
-            this.gbRegistroEmpleado.Controls.Add(this.button2);
+            this.gbRegistroEmpleado.Controls.Add(this.btnFacturas);
             this.gbRegistroEmpleado.Controls.Add(this.button1);
             this.gbRegistroEmpleado.Controls.Add(this.cbBebidas);
             this.gbRegistroEmpleado.Controls.Add(this.label15);
@@ -164,24 +167,25 @@
             this.label18.TabIndex = 35;
             this.label18.Text = "Chefs:";
             // 
-            // button2
+            // btnFacturas
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(642, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 35);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Ver Facturas";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFacturas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturas.Location = new System.Drawing.Point(522, 231);
+            this.btnFacturas.Name = "btnFacturas";
+            this.btnFacturas.Size = new System.Drawing.Size(168, 35);
+            this.btnFacturas.TabIndex = 34;
+            this.btnFacturas.Text = "Ver Facturas";
+            this.btnFacturas.UseVisualStyleBackColor = false;
+            this.btnFacturas.Click += new System.EventHandler(this.btnFacturas_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(455, 231);
+            this.button1.Location = new System.Drawing.Point(335, 231);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 35);
             this.button1.TabIndex = 33;
@@ -346,7 +350,7 @@
             this.btnAgregarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnAgregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarPedido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPedido.Location = new System.Drawing.Point(261, 231);
+            this.btnAgregarPedido.Location = new System.Drawing.Point(141, 231);
             this.btnAgregarPedido.Name = "btnAgregarPedido";
             this.btnAgregarPedido.Size = new System.Drawing.Size(168, 35);
             this.btnAgregarPedido.TabIndex = 16;
@@ -497,7 +501,8 @@
             this.telefono,
             this.sueldo,
             this.tipo,
-            this.platillos});
+            this.Column2,
+            this.Column1});
             this.dgvPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPedidos.Location = new System.Drawing.Point(0, 389);
@@ -529,7 +534,7 @@
             this.direccion.HeaderText = "Dirección";
             this.direccion.Name = "direccion";
             this.direccion.ReadOnly = true;
-            this.direccion.Width = 272;
+            this.direccion.Width = 200;
             // 
             // apellidoEmpleado
             // 
@@ -560,12 +565,20 @@
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
             // 
-            // platillos
+            // Column2
             // 
-            this.platillos.Frozen = true;
-            this.platillos.HeaderText = "Ver Platillos";
-            this.platillos.Name = "platillos";
-            this.platillos.ReadOnly = true;
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Factura";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 72;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Total";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // label1
             // 
@@ -657,12 +670,26 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Total de Pedidos:";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(717, 231);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(168, 35);
+            this.btnSalir.TabIndex = 37;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1106, 614);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pEmpleado);
             this.Name = "Pedido";
@@ -715,15 +742,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbBebidas;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewButtonColumn platillos;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFacturas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -734,5 +753,15 @@
         public System.Windows.Forms.Label lblTotalPedido;
         public System.Windows.Forms.Label lblTotalPedidos;
         public System.Windows.Forms.DataGridView dgvPedidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

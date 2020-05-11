@@ -62,6 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCuiEmpleado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.panel1.SuspendLayout();
             this.pEmpleado.SuspendLayout();
@@ -222,6 +223,7 @@
             // 
             // gbRegistroEmpleado
             // 
+            this.gbRegistroEmpleado.Controls.Add(this.btnSalir);
             this.gbRegistroEmpleado.Controls.Add(this.button1);
             this.gbRegistroEmpleado.Controls.Add(this.cbJefes);
             this.gbRegistroEmpleado.Controls.Add(this.label9);
@@ -253,7 +255,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(455, 215);
+            this.button1.Location = new System.Drawing.Point(311, 219);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 35);
             this.button1.TabIndex = 16;
@@ -404,12 +406,26 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "CUI:";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(569, 219);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(168, 35);
+            this.btnSalir.TabIndex = 17;
+            this.btnSalir.Text = "Salr";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1106, 619);
+            this.ControlBox = false;
             this.Controls.Add(this.pEmpleado);
             this.Controls.Add(this.panel1);
             this.Name = "Empleado";
@@ -461,5 +477,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblRecientes;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

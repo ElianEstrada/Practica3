@@ -20,6 +20,7 @@ namespace Entidad
         public long empleado2 { get; set; }
         public long repartidor2 { get; set; }
         public int factura { get; set; }
+        public double total { get; set; }
 
         public Pedido(int idPedido, string empleado2, string repartidor2, string hora, long cliente)
         {

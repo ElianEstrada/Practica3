@@ -14,6 +14,8 @@ namespace Entidad
         public string direccion { get; set; }
         public string  hora { get; set; }
         public string fecha { get; set; }
+        public string nit { get; set; }
+        public string cliente { get; set; }
         public double total { get; set; }
 
     }

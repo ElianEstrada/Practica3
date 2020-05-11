@@ -1,4 +1,5 @@
 ﻿using Acceso_Datos;
+using Entidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace Logica
         public bool agregarFactura(int idFactura, string serie, string direccion, string hora, string fecha, double total)
         {
             return facturaDA.add_Factura(idFactura, serie, direccion, String.Format("{0:HH:mm:ss}", hora), String.Format("{0:yyyy-MM-dd}", fecha), total);
+        }
+
+        public LinkedList<Factura> listaFactura()
+        {
+            return facturaDA.listaFacturas();
         }
 
     }

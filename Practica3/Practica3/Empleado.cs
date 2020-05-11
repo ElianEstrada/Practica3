@@ -137,5 +137,12 @@ namespace Practica3
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            this.Hide();
+            form.Show();
+        }
     }
 }

@@ -20,10 +20,10 @@ namespace Practica3
         EmpleadoLogic empleado = new EmpleadoLogic();
         PlatilloLogic platillo = new PlatilloLogic();
         ClienteLogic cliente = new ClienteLogic();
+        PedidoDomicilioLogic pedidos = new PedidoDomicilioLogic();
         int totalPedido = 0;
         public static int platillosAgregados = 0;
         public static double total = 0;
-        static int idFactura = 0;
         static int posicion = -1;
 
         public Pedido()
@@ -31,8 +31,9 @@ namespace Practica3
             InitializeComponent();
             dtpHoraPedido.Value = DateTime.Now;
             lblPlatillos.Text = platillosAgregados.ToString();
-            lblTotalPedido.Text = total.ToString();
+            lblTotalPedido.Text = String.Format("{0:c}", total);
             lblTotalPedidos.Text = totalPedido.ToString();
+            llenarTablaPedidos(pedidos.listaPedidos(), dgvPedidos);
             llenarPlatillo(platillo.listaPlatillos(), cbPlatillos);
             llenarEmpleados(empleado.listaEmpleados(), cbEmpledoPedido, cbRepartidor);
             llenarBebidas(platillo.listaBebidas(), cbBebidas);
@@ -190,7 +191,7 @@ namespace Practica3
                 MessageBox.Show("Platillo Agregado");
 
                 lblPlatillos.Text = platillosAgregados.ToString();
-                lblTotalPedido.Text = total.ToString();
+                lblTotalPedido.Text = String.Format("{0:c}", total);
 
             }
             else
@@ -231,8 +232,32 @@ namespace Practica3
                     item.precio,
                     item.cantidad,
                     chef[1],
-                    item.subTotal
+                    String.Format("{0:c}", item.subTotal)
                 );
+
+            }
+
+        }
+
+        public void llenarTablaPedidos(LinkedList<Entidad.Pedido> listaPedidos, DataGridView dataGridView)
+        {
+            lblTotalPedidos.Text = listaPedidos.Count.ToString();
+            dataGridView.Rows.Clear();
+
+            foreach (var item in listaPedidos)
+            {
+
+                dataGridView.Rows.Add(
+                    item.idPedido,
+                    item.cliente, 
+                    item.direccion, 
+                    item.fecha, 
+                    String.Format("{0:HH:mm:ss}", item.hora),
+                    item.empleado, 
+                    item.repartidor, 
+                    item.factura,
+                    String.Format("{0:c}", item.total)
+                    );
 
             }
 
@@ -276,6 +301,21 @@ namespace Practica3
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+
+        private void btnFacturas_Click(object sender, EventArgs e)
+        {
+            ListaDeFacturas facturas = new ListaDeFacturas();
+            facturas.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            this.Hide();
+            form.Show();
+            this.Close();
         }
     }
 }

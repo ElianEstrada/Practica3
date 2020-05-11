@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Entidad;
 
 namespace Acceso_Datos
 {
@@ -46,6 +47,43 @@ namespace Acceso_Datos
             }
 
             return false;
+        }
+
+        public LinkedList<Factura> listaFacturas()
+        {
+            LinkedList<Factura> facturas = new LinkedList<Factura>();
+
+            try
+            {
+
+                cmd = new SqlCommand("show_Factura", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Factura factura = new Factura();
+
+                    factura.idFactura = int.Parse(reader[0].ToString());
+                    factura.serie = reader[1].ToString();
+                    factura.direccion = reader[2].ToString();
+                    factura.hora = reader[3].ToString();
+                    factura.fecha = reader[4].ToString();
+                    factura.nit = reader[5].ToString();
+                    factura.cliente = reader[6].ToString();
+                    factura.total = double.Parse(reader[7].ToString());
+
+                    facturas.AddLast(factura);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return facturas;
         }
 
     }

@@ -259,3 +259,45 @@ end;
 select * from Factura;
 select * from PedidoDomicilio;
 select * from Pedido_Platillo;
+
+
+create procedure show_Pedidos
+as
+begin
+select PD.idPedido, PD.hora, PD.fecha, PD.direccionEntrega, C.nombreCliente, E.nombre as Empleado, E2.nombre as Repartidor, F.idFactura, F.total from PedidoDomicilio as PD
+join cliente as C
+on PD.fk_cliente = C.cuiCliente
+join Empleado as E
+on PD.fk_empleado = E.cuiEmpleado
+join Empleado as E2
+on PD.fk_repartidor = E2.cuiEmpleado
+join Factura as F
+on PD.fk_factura = F.idFactura;
+end;
+
+exec show_Pedidos;
+
+create procedure show_Factura
+as
+begin
+select F.idFactura, F.serieFactura, F.direccionEntrega, F.hora, F.fecha, C.nitCliente, C.nombreCliente, F.total from Factura as F
+join PedidoDomicilio as PD
+on PD.fk_factura = F.idFactura
+join cliente as C
+on PD.fk_cliente = C.cuiCliente;
+end;
+
+exec show_Factura;
+
+exec show_clientes;
+exec show_TipoEmpleado;
+exec show_Empleado;
+select * from Empleado;
+
+create procedure aplicarBono
+@cui numeric(13, 0)
+as
+begin
+update Empleado set bono += 20
+where Empleado.fk_idTipoEmpleado = 8 and Empleado.cuiEmpleado = @cui;
+end;
