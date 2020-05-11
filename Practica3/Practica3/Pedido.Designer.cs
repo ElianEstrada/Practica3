@@ -592,6 +592,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1106, 22);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblTotalPedido
             // 
@@ -697,7 +698,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFechaPedido;
         private System.Windows.Forms.Label label11;
@@ -725,13 +725,14 @@
         private System.Windows.Forms.DataGridViewButtonColumn platillos;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblPlatillos;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label lblTotalPedidos;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cbChef;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label lblTotalPedido;
         private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.Label lblPlatillos;
+        public System.Windows.Forms.Label lblTotalPedido;
+        public System.Windows.Forms.Label lblTotalPedidos;
+        public System.Windows.Forms.DataGridView dgvPedidos;
     }
 }

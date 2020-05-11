@@ -16,13 +16,13 @@ namespace Practica3
     {
 
         
-        static List<PlatilloPedido> platilloPedidos = new List<PlatilloPedido>();
+        public static List<PlatilloPedido> platilloPedidos = new List<PlatilloPedido>();
         EmpleadoLogic empleado = new EmpleadoLogic();
         PlatilloLogic platillo = new PlatilloLogic();
         ClienteLogic cliente = new ClienteLogic();
         int totalPedido = 0;
-        static int platillosAgregados = 0;
-        static double total = 0;
+        public static int platillosAgregados = 0;
+        public static double total = 0;
         static int idFactura = 0;
         static int posicion = -1;
 
@@ -255,6 +255,7 @@ namespace Practica3
             cliente.add_Cliente(long.Parse(cbCuiCliente.Text), txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtNit.Text);
             llenarClientes(cliente.listaClientes(), cbCuiCliente);
 
+            this.Hide();
             facturas.Show();
         }
 
@@ -270,6 +271,11 @@ namespace Practica3
                     txtTelefono.Text = item.telefono.ToString();
                 }
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -45,11 +45,18 @@ namespace Practica3
                     {
                         if(platillo.add_PlatilloPedido(item.cantidad, item.subTotal, item.bebida, item.pedido, item.platillo))
                         {
-                            MessageBox.Show("Platillo Agregado");
+                            
                         }
                     }
                 }
             }
+
+            Pedido.platilloPedidos.Clear();
+            Pedido.total = 0;
+            Pedido.platillosAgregados = 0;
+            Pedido pedido = new Pedido();
+            this.Close();
+            pedido.Show();
         }
     }
 }
