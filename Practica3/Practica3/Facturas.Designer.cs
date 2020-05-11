@@ -30,10 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvPlatillosFactura = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbRegistroEmpleado = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerarFactura = new System.Windows.Forms.Button();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpHoraPedido = new System.Windows.Forms.DateTimePicker();
@@ -41,7 +46,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtSerieFactura = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,16 +55,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvPlatillosFactura = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.gbRegistroEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatillosFactura)).BeginInit();
+            this.gbRegistroEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,21 +81,73 @@
             this.panel2.Size = new System.Drawing.Size(729, 567);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // dgvPlatillosFactura
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(239, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 40);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Generar Factura";
+            this.dgvPlatillosFactura.AllowUserToAddRows = false;
+            this.dgvPlatillosFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlatillosFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dgvPlatillosFactura.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvPlatillosFactura.Location = new System.Drawing.Point(0, 353);
+            this.dgvPlatillosFactura.Name = "dgvPlatillosFactura";
+            this.dgvPlatillosFactura.ReadOnly = true;
+            this.dgvPlatillosFactura.RowHeadersVisible = false;
+            this.dgvPlatillosFactura.Size = new System.Drawing.Size(729, 214);
+            this.dgvPlatillosFactura.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "IdPlatillo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 75;
+            // 
+            // Column2
+            // 
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.Frozen = true;
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.Frozen = true;
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.Frozen = true;
+            this.Column5.HeaderText = "Chef";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 200;
+            // 
+            // Column6
+            // 
+            this.Column6.Frozen = true;
+            this.Column6.HeaderText = "SubTotal";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // gbRegistroEmpleado
             // 
-            this.gbRegistroEmpleado.Controls.Add(this.button2);
-            this.gbRegistroEmpleado.Controls.Add(this.button1);
+            this.gbRegistroEmpleado.Controls.Add(this.btnGenerarFactura);
             this.gbRegistroEmpleado.Controls.Add(this.txtNumeroFactura);
             this.gbRegistroEmpleado.Controls.Add(this.label13);
             this.gbRegistroEmpleado.Controls.Add(this.dtpHoraPedido);
@@ -105,7 +155,6 @@
             this.gbRegistroEmpleado.Controls.Add(this.label11);
             this.gbRegistroEmpleado.Controls.Add(this.txtSerieFactura);
             this.gbRegistroEmpleado.Controls.Add(this.label10);
-            this.gbRegistroEmpleado.Controls.Add(this.btnAgregarPedido);
             this.gbRegistroEmpleado.Controls.Add(this.label7);
             this.gbRegistroEmpleado.Controls.Add(this.txtDireccion);
             this.gbRegistroEmpleado.Controls.Add(this.label6);
@@ -124,29 +173,18 @@
             this.gbRegistroEmpleado.TabStop = false;
             this.gbRegistroEmpleado.Text = "Agregar Facturas:";
             // 
-            // button2
+            // btnGenerarFactura
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(440, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 35);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Generar Factura";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(253, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 35);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Ver Platillos ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGenerarFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGenerarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGenerarFactura.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarFactura.Location = new System.Drawing.Point(269, 227);
+            this.btnGenerarFactura.Name = "btnGenerarFactura";
+            this.btnGenerarFactura.Size = new System.Drawing.Size(168, 35);
+            this.btnGenerarFactura.TabIndex = 34;
+            this.btnGenerarFactura.Text = "Generar Factura";
+            this.btnGenerarFactura.UseVisualStyleBackColor = false;
+            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
             // 
             // txtNumeroFactura
             // 
@@ -216,18 +254,6 @@
             this.label10.Size = new System.Drawing.Size(104, 19);
             this.label10.TabIndex = 18;
             this.label10.Text = "Serie Factura:";
-            // 
-            // btnAgregarPedido
-            // 
-            this.btnAgregarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnAgregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregarPedido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPedido.Location = new System.Drawing.Point(59, 228);
-            this.btnAgregarPedido.Name = "btnAgregarPedido";
-            this.btnAgregarPedido.Size = new System.Drawing.Size(168, 35);
-            this.btnAgregarPedido.TabIndex = 16;
-            this.btnAgregarPedido.Text = "Agregar Pedido";
-            this.btnAgregarPedido.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -308,69 +334,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre:";
             // 
-            // dgvPlatillosFactura
+            // label1
             // 
-            this.dgvPlatillosFactura.AllowUserToAddRows = false;
-            this.dgvPlatillosFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlatillosFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dgvPlatillosFactura.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPlatillosFactura.Location = new System.Drawing.Point(0, 353);
-            this.dgvPlatillosFactura.Name = "dgvPlatillosFactura";
-            this.dgvPlatillosFactura.ReadOnly = true;
-            this.dgvPlatillosFactura.RowHeadersVisible = false;
-            this.dgvPlatillosFactura.Size = new System.Drawing.Size(729, 214);
-            this.dgvPlatillosFactura.TabIndex = 5;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "IdPlatillo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 75;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.Frozen = true;
-            this.Column4.HeaderText = "Cantidad";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.Frozen = true;
-            this.Column5.HeaderText = "Chef";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 200;
-            // 
-            // Column6
-            // 
-            this.Column6.Frozen = true;
-            this.Column6.HeaderText = "SubTotal";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(239, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 40);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Generar Factura";
             // 
             // Facturas
             // 
@@ -384,9 +357,9 @@
             this.Text = "Facturas";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlatillosFactura)).EndInit();
             this.gbRegistroEmpleado.ResumeLayout(false);
             this.gbRegistroEmpleado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlatillosFactura)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,8 +370,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbRegistroEmpleado;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGenerarFactura;
         private System.Windows.Forms.TextBox txtNumeroFactura;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpHoraPedido;
@@ -406,7 +378,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtSerieFactura;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnAgregarPedido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label6;

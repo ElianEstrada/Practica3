@@ -106,5 +106,39 @@ namespace Acceso_Datos
 
         }
 
+
+        public bool add_PedidoPlatillo(int cantidad, double subTotal, int bebida, int pedido, int platillo)
+        {
+
+            try
+            {
+
+                cmd = new SqlCommand("add_PedidoPlatillo", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                cmd.Parameters.AddWithValue("@subTotal", subTotal);
+                cmd.Parameters.AddWithValue("@bebida", bebida);
+                cmd.Parameters.AddWithValue("@pedido", pedido);
+                cmd.Parameters.AddWithValue("@platillo", platillo);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                int filas = reader.RecordsAffected;
+
+                if (filas != 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            return false;
+        }
+
     }
 }

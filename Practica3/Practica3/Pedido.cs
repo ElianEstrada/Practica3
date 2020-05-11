@@ -248,8 +248,9 @@ namespace Practica3
         private void btnAgregarPedido_Click(object sender, EventArgs e)
         {
             Entidad.Pedido pedido = new Entidad.Pedido(int.Parse(txtIdPedido.Text), cbEmpledoPedido.Text, cbRepartidor.Text, String.Format("{0:HH:mm:ss}", dtpHoraPedido.Value), long.Parse(cbCuiCliente.Text));
-            Facturas facturas = new Facturas(txtNit.Text, txtNombre.Text, txtDireccion.Text, dtpFechaPedido.Value, dtpHoraPedido.Value, total, pedido);
+            Facturas facturas = new Facturas(txtNit.Text, txtNombre.Text, txtDireccion.Text, dtpFechaPedido.Value, dtpHoraPedido.Value, total, pedido, platilloPedidos);
             llenartablaPlatillos(platilloPedidos, facturas.dgvPlatillosFactura);
+            
 
             cliente.add_Cliente(long.Parse(cbCuiCliente.Text), txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtNit.Text);
             llenarClientes(cliente.listaClientes(), cbCuiCliente);

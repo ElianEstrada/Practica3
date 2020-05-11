@@ -45,6 +45,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="EmpleadoDA.cs" />
     <Compile Include="FacturaDA.cs" />
+    <Compile Include="PedidoDomicilioDA.cs" />
     <Compile Include="PlatilloDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

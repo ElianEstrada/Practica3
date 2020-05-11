@@ -235,3 +235,27 @@ begin
 select * from Chef_Platillo as CP
 where CP.fk_platillo = @idPlatillo and CP.fk_chef = @cui;
 end;
+
+
+create procedure modificaCantidad
+@cantidad int, @cui numeric(13, 0), @platillo int
+as
+begin
+update Chef_Platillo set cantidad += @cantidad
+where Chef_Platillo.fk_chef = @cui and Chef_Platillo.fk_platillo = @platillo;
+end;
+
+exec modificaCantidad 12, 3034366110108, 2;
+
+select * from Pedido_Platillo;
+
+create procedure add_PedidoPlatillo
+@cantidad int, @subTotal numeric(8,2), @bebida int, @pedido int, @platillo int
+as
+begin
+insert into Pedido_Platillo values(@cantidad, @subTotal, @bebida, @pedido, @platillo);
+end;
+
+select * from Factura;
+select * from PedidoDomicilio;
+select * from Pedido_Platillo;

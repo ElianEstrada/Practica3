@@ -28,10 +28,24 @@ namespace Logica
             return platilloDA.precioPlatillo(arreglarIdPlatillo(idPlatillo));
         }
 
+        public bool add_PlatilloPedido(int cantidad, double subTotal, string bebida, int pedido, string platillo)
+        {
+            return platilloDA.add_PedidoPlatillo(cantidad, subTotal, arreglarBebida(bebida), pedido, arreglarIdPlatillo(platillo));
+        }
+
+        public int arreglarBebida(string bebida)
+        {
+            string[] idBebida = bebida.Split('.');
+            return int.Parse(idBebida[1]);
+        }
+
         public int arreglarIdPlatillo(string idplatillo)
         {
             string[] idTipo = idplatillo.Split('.');
             return int.Parse(idTipo[1]);
         }
+
+        
+
     }
 }

@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ClienteLogic.cs" />
     <Compile Include="EmpleadoLogic.cs" />
+    <Compile Include="FacturaLogic.cs" />
+    <Compile Include="PedidoDomicilioLogic.cs" />
     <Compile Include="PlatilloLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

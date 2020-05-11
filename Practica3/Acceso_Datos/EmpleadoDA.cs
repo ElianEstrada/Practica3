@@ -235,20 +235,42 @@ namespace Acceso_Datos
             try
             {
 
-                cmd = new SqlCommand("ChefPlatillo", conexion.abrirConexion());
-                cmd.CommandType = CommandType.StoredProcedure;
+                if(!existePlatilloChef(chef, platillo)){
 
-                cmd.Parameters.AddWithValue("@cantidad", cantidad);
-                cmd.Parameters.AddWithValue("@chef", chef);
-                cmd.Parameters.AddWithValue("@platillo", platillo);
+                    cmd = new SqlCommand("ChefPlatillo", conexion.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                    cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@chef", chef);
+                    cmd.Parameters.AddWithValue("@platillo", platillo);
 
-                int filas = reader.RecordsAffected;
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                if (filas != 0)
+                    int filas = reader.RecordsAffected;
+
+                    if (filas != 0)
+                    {
+                        return true;
+                    }
+                }
+                else
                 {
-                    return true;
+                    cmd = new SqlCommand("modificarCantidad", conexion.abrirConexion());
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@cui", chef);
+                    cmd.Parameters.AddWithValue("@platillo", platillo);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    int filas = reader.RecordsAffected;
+
+                    if(filas != 0)
+                    {
+                        return true;
+                    }
+
                 }
 
             }
@@ -261,6 +283,34 @@ namespace Acceso_Datos
 
         }
        
+
+        public bool existePlatilloChef(long cui, int platillo)
+        {
+
+            try
+            {
+
+                cmd = new SqlCommand("existePlatilloChef", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@cui", cui);
+                cmd.Parameters.AddWithValue("@idPlatillo", platillo);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            return false;
+        }
 
     }
 }
