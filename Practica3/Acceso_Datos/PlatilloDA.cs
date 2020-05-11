@@ -140,5 +140,39 @@ namespace Acceso_Datos
             return false;
         }
 
+
+        public LinkedList<Platillo> reporte3(string version)
+        {
+            LinkedList<Platillo> platillos = new LinkedList<Platillo>();
+
+            try
+            {
+
+                cmd = new SqlCommand("platillosOrdenadosV" + version, conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Platillo platillo = new Platillo();
+
+                    platillo.idPlatillo = int.Parse(reader[0].ToString());
+                    platillo.nombre = reader[1].ToString();
+                    platillo.precio = double.Parse(reader[2].ToString());
+
+                    platillos.AddLast(platillo);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return platillos;
+        }
+
+
     }
 }

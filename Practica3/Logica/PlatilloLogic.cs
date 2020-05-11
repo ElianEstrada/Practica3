@@ -18,6 +18,11 @@ namespace Logica
             return platilloDA.listaPlatillos();
         }
 
+        public LinkedList<Platillo> reporte3(string version)
+        {
+            return platilloDA.reporte3(version);
+        }
+
         public LinkedList<Bebida> listaBebidas()
         {
             return platilloDA.listaBebidas();

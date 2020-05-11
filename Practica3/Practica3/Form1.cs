@@ -52,6 +52,9 @@ namespace Practica3
                     reporte2.Show();
                     break;
                 case 2:
+                    Reporte3_Platillos reporte3 = new Reporte3_Platillos();
+                    this.Hide();
+                    reporte3.Show();
                     break;
                 case 3:
                     break;

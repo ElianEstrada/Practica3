@@ -90,6 +90,12 @@
     <Compile Include="Reporte2-EmpleadoOrden.Designer.cs">
       <DependentUpon>Reporte2-EmpleadoOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte3-Platillos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte3-Platillos.Designer.cs">
+      <DependentUpon>Reporte3-Platillos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tabla de Platillos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte2-EmpleadoOrden.resx">
       <DependentUpon>Reporte2-EmpleadoOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte3-Platillos.resx">
+      <DependentUpon>Reporte3-Platillos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tabla de Platillos.resx">
       <DependentUpon>Tabla de Platillos.cs</DependentUpon>
