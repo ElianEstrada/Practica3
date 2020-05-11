@@ -469,3 +469,14 @@ delete from PedidoDomicilio;
 delete from Factura;
 
 select * from Factura;
+
+select * from Empleado;
+
+update Empleado set bono = 0;;
+
+
+
+
+select (E.sueldo + E.bono) as SueldoTotal, E.nombre, E.apellido from Empleado as E
+order by SueldoTotal desc;
+

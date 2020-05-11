@@ -33,7 +33,7 @@ namespace Practica3
 
                     dgvReporte5.Rows.Add(
                         item.idFactura,
-                        item.total
+                        String.Format("{0:c}", item.total)
                         );
 
                 }
@@ -41,7 +41,7 @@ namespace Practica3
             }
             catch (Exception e)
             {
-                MessageBox.Show("No Ha facturas en esa fecha");
+                MessageBox.Show("No Hay facturas en esa fecha");
             }
 
         }
