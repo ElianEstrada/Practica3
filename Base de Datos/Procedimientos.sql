@@ -341,15 +341,11 @@ group by P.nombre, P.precio
 order by Ordenados desc;
 
 
-
-
-
-select MONTH(F.fecha) as Mes from Factura as F;
-select DAY(F.fecha) as Dia, MONTH(F.fecha) as Mes from Factura as F;
-
+--Reporte facturación por Mes
 select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
 where MONTH(F.fecha) = 5;
 
+--Reporte Facturación por día.
 select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
 where DAY(F.fecha) = 9 and MONTH(F.fecha) = 5;
 
