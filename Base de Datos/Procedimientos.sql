@@ -212,3 +212,26 @@ end;
 select * from cliente;
 
 select * from PedidoDomicilio;
+
+select * from Chef_Platillo;
+
+create procedure ChefPlatillo
+@cantidad int, @chef numeric(13, 0), @platillo int
+as
+begin
+insert into Chef_Platillo values (@cantidad, @chef, @platillo);
+end;
+
+exec show_Chef;
+
+
+exec ChefPlatillo 12, 3034366110108, 2;
+exec ChefPlatillo 45, 3034366110110, 2;
+
+create procedure existePlatilloChef
+@cui numeric(13, 0), @idPlatillo int
+as
+begin
+select * from Chef_Platillo as CP
+where CP.fk_platillo = @idPlatillo and CP.fk_chef = @cui;
+end;

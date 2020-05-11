@@ -15,7 +15,7 @@ namespace Practica3
     public partial class Pedido : Form
     {
 
-        Tabla_de_Platillos tablaPlatillos = new Tabla_de_Platillos();
+        
         static List<PlatilloPedido> platilloPedidos = new List<PlatilloPedido>();
         EmpleadoLogic empleado = new EmpleadoLogic();
         PlatilloLogic platillo = new PlatilloLogic();
@@ -24,6 +24,7 @@ namespace Practica3
         static int platillosAgregados = 0;
         static double total = 0;
         static int idFactura = 0;
+        static int posicion = -1;
 
         public Pedido()
         {
@@ -172,9 +173,22 @@ namespace Practica3
                 platillo.cuiChef = cbChef.Text;
                 platillo.subTotal = platillo.precio * platillo.cantidad;
                 total += platillo.subTotal;
-                platilloPedidos.Add(platillo);
-                platillosAgregados++;
+
+                if(existeChefPlatillo(platilloPedidos, platillo.cuiChef, platillo.platillo))
+                {
+                    platilloPedidos.ElementAt(posicion).cantidad += platillo.cantidad;
+                    platilloPedidos.ElementAt(posicion).subTotal += platillo.subTotal;
+                }
+                else
+                {
+                    platilloPedidos.Add(platillo);
+                    platillosAgregados++;
+                }
+                
+                empleado.addChefPlatillo(platillo.cantidad, platillo.cuiChef, platillo.platillo);
+
                 MessageBox.Show("Platillo Agregado");
+
                 lblPlatillos.Text = platillosAgregados.ToString();
                 lblTotalPedido.Text = total.ToString();
 
@@ -184,6 +198,23 @@ namespace Practica3
                 MessageBox.Show("Por favor Completar los campos de [Bebidas], [Cantidad], [Platillos], [chef] y [Número Pedido]");
             }
         }
+
+        public bool existeChefPlatillo(List<PlatilloPedido> platilloPedidos, string cui, string idPedido)
+        {
+            int contador = -1;
+            foreach (var item in platilloPedidos)
+            {
+                contador++;
+                if (item.cuiChef.Equals(cui) && item.platillo.Equals(idPedido))
+                {
+                    posicion = contador;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 
         public void llenartablaPlatillos(List<PlatilloPedido> platilloPedidos, DataGridView dataGridView)
         {
@@ -209,6 +240,7 @@ namespace Practica3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Tabla_de_Platillos tablaPlatillos = new Tabla_de_Platillos();
             llenartablaPlatillos(platilloPedidos, tablaPlatillos.dgvPlatillos);
             tablaPlatillos.Show();
         }
@@ -216,7 +248,7 @@ namespace Practica3
         private void btnAgregarPedido_Click(object sender, EventArgs e)
         {
             Entidad.Pedido pedido = new Entidad.Pedido(int.Parse(txtIdPedido.Text), cbEmpledoPedido.Text, cbRepartidor.Text, String.Format("{0:HH:mm:ss}", dtpHoraPedido.Value), long.Parse(cbCuiCliente.Text));
-            Facturas facturas = new Facturas(txtNit.Text, txtNombre.Text, txtDireccion.Text, dtpFechaPedido.Value, dtpHoraPedido.Value, total);
+            Facturas facturas = new Facturas(txtNit.Text, txtNombre.Text, txtDireccion.Text, dtpFechaPedido.Value, dtpHoraPedido.Value, total, pedido);
             llenartablaPlatillos(platilloPedidos, facturas.dgvPlatillosFactura);
 
             cliente.add_Cliente(long.Parse(cbCuiCliente.Text), txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtNit.Text);

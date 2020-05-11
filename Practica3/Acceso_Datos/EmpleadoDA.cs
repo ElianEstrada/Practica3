@@ -228,6 +228,38 @@ namespace Acceso_Datos
             return false;
         }
 
+
+        public bool add_ChefPlatillo(int cantidad, long chef, int platillo)
+        {
+
+            try
+            {
+
+                cmd = new SqlCommand("ChefPlatillo", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                cmd.Parameters.AddWithValue("@chef", chef);
+                cmd.Parameters.AddWithValue("@platillo", platillo);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                int filas = reader.RecordsAffected;
+
+                if (filas != 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            return false;
+
+        }
        
 
     }

@@ -50,6 +50,11 @@ namespace Logica
             return false;
         }
 
+        public bool addChefPlatillo(int cantidad, string chef, string platillo)
+        {
+            return empleadoDA.add_ChefPlatillo(cantidad, arreglarEmpleados(chef), arreglarIdPlatillo(platillo));
+        }
+
         public long arreglarEmpleados(string empleado)
         {
             string[] cuiJefe = empleado.Split(',');
@@ -60,6 +65,12 @@ namespace Logica
         {
             string[] idTipo = tipo.Split('.');
             return int.Parse(idTipo[0]);
+        }
+
+        public int arreglarIdPlatillo(string idplatillo)
+        {
+            string[] idTipo = idplatillo.Split('.');
+            return int.Parse(idTipo[1]);
         }
 
     }
