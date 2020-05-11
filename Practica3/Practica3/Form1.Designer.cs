@@ -105,6 +105,7 @@
             this.btnReportes.TabIndex = 23;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnPedidos
             // 
@@ -151,7 +152,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(208, 234);
+            this.btnSalir.Location = new System.Drawing.Point(208, 229);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(168, 35);
             this.btnSalir.TabIndex = 25;

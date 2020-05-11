@@ -311,6 +311,16 @@ group by E.nombre, E.apellido,E.sueldo, E.bono
 order by Entregas desc;
 
 
+create procedure repartidorEntregas
+as 
+begin
+select COUNT(E.cuiEmpleado) as Entregas, E.nombre, E.apellido, E.sueldo, E.bono from Empleado as E
+join PedidoDomicilio as PD
+on PD.fk_repartidor = E.cuiEmpleado
+group by E.nombre, E.apellido,E.sueldo, E.bono
+order by Entregas desc;
+end;
+
 
 
 
@@ -322,9 +332,29 @@ group by E.nombre, E.apellido, E.sueldo
 order by Ingresos desc;
 
 
+create procedure empleadoIngresos
+as
+begin
+select COUNT(E.cuiEmpleado) as Ingresos, E.nombre, E.apellido, E.sueldo from Empleado as E
+join PedidoDomicilio as PD
+on PD.fk_empleado = E.cuiEmpleado
+group by E.nombre, E.apellido, E.sueldo
+order by Ingresos desc;
+end;
+
+
+
+
+
+
+
+
+
+
 
 
 --Reporte de mas platillos ordenados
+
 --Versión 1
 select SUM(PP.cantidad) as Ordenados, P.nombre, P.precio from platillo as P
 join Pedido_Platillo as PP
@@ -332,6 +362,16 @@ on PP.fk_platillo = P.idPlatillo
 group by P.nombre, P.precio
 order by Ordenados desc;
 
+
+create procedure platillosOrdenadosV1
+as 
+begin
+select SUM(PP.cantidad) as Ordenados, P.nombre, P.precio from platillo as P
+join Pedido_Platillo as PP
+on PP.fk_platillo = P.idPlatillo
+group by P.nombre, P.precio
+order by Ordenados desc;
+end;
 
 --Version 2
 select COUNT(P.idPlatillo) as Ordenados, P.nombre, P.precio from platillo as P
@@ -341,16 +381,42 @@ group by P.nombre, P.precio
 order by Ordenados desc;
 
 
+create procedure platillosOrdenadosV2
+as
+begin
+select COUNT(P.idPlatillo) as Ordenados, P.nombre, P.precio from platillo as P
+join Pedido_Platillo as PP
+on PP.fk_platillo = P.idPlatillo
+group by P.nombre, P.precio
+order by Ordenados desc;
+end;
+
+
+
+
+
+
+
+
+
 --Reporte facturación por Mes
 select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
-where MONTH(F.fecha) = 5;
+where MONTH(F.fecha) = 5 and YEAR(F.fecha) = 2020;
 
 --Reporte Facturación por día.
 select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
-where DAY(F.fecha) = 9 and MONTH(F.fecha) = 5;
+where DAY(F.fecha) = 9 and MONTH(F.fecha) = 5 and YEAR(F.fecha) = 2020;s
 
-declare @cantidad int = (select COUNT(E.cuiEmpleado) as Pedidos from Empleado as E join Chef_Platillo as CP on CP.fk_chef = E.cuiEmpleado group by cuiEmpleado)
 
+
+
+
+
+
+
+
+
+--Reporte de Platillos Concinados por Chef
 select SUM(CP.cantidad) as pedidos, E.cuiEmpleado, E.nombre, E.apellido from Empleado as E 
 join Chef_Platillo as CP 
 on CP.fk_chef = E.cuiEmpleado 
@@ -358,7 +424,15 @@ group by cuiEmpleado, E.nombre, E.apellido
 order by pedidos desc;
 
 
-
+create procedure platillosChef 
+as 
+begin
+select SUM(CP.cantidad) as pedidos, E.cuiEmpleado, E.nombre, E.apellido from Empleado as E 
+join Chef_Platillo as CP 
+on CP.fk_chef = E.cuiEmpleado 
+group by cuiEmpleado, E.nombre, E.apellido 
+order by pedidos desc;
+end;
 
 
 

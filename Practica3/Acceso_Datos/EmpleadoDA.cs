@@ -313,6 +313,71 @@ namespace Acceso_Datos
         }
 
 
+        public LinkedList<Empleado> reporte1()
+        {
+            LinkedList<Empleado> empleados = new LinkedList<Empleado>();
+
+            try
+            {
+
+                cmd = new SqlCommand("repartidorEntregas", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Empleado empleado = new Empleado();
+                    empleado.Entregas = int.Parse(reader[0].ToString());
+                    empleado.nombre = reader[1].ToString();
+                    empleado.apellido = reader[2].ToString();
+                    empleado.sueldo = double.Parse(reader[3].ToString());
+                    empleado.bono = int.Parse(reader[4].ToString());
+
+                    empleados.AddLast(empleado);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return empleados;
+        }
+
+
+        public LinkedList<Empleado> reporte2()
+        {
+            LinkedList<Empleado> empleados = new LinkedList<Empleado>();
+
+            try
+            {
+
+                cmd = new SqlCommand("empleadoIngresos", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Empleado empleado = new Empleado();
+                    empleado.Entregas = int.Parse(reader[0].ToString());
+                    empleado.nombre = reader[1].ToString();
+                    empleado.apellido = reader[2].ToString();
+                    empleado.sueldo = double.Parse(reader[3].ToString());
+
+                    empleados.AddLast(empleado);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return empleados;
+        }
 
     }
 }

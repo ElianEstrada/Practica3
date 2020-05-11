@@ -19,3 +19,5 @@ D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Pract
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Tabla_de_Platillos.resources
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Facturas.resources
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.ListaDeFacturas.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Reporte1_Repartidor.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Reporte2_EmpleadoOrden.resources

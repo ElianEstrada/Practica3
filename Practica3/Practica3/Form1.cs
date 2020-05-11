@@ -36,5 +36,28 @@ namespace Practica3
             this.Close();
             Application.Exit();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            switch (cbTipoReporte.SelectedIndex)
+            {
+                case 0:
+                    Reporte1_Repartidor reporte1 = new Reporte1_Repartidor();
+                    this.Hide();
+                    reporte1.Show();
+                    break;
+                case 1:
+                    Reporte2_EmpleadoOrden reporte2 = new Reporte2_EmpleadoOrden();
+                    this.Hide();
+                    reporte2.Show();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace Entidad
         public int bono { get; set; }
         public string jefe { get; set; }
         public string tipoEmpleado { get; set; }
+        public int Entregas { get; set; }
 
     }
 }
