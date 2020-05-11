@@ -57,6 +57,9 @@ namespace Practica3
                     reporte3.Show();
                     break;
                 case 3:
+                    Reporte4_ChefPlatillo reporte4 = new Reporte4_ChefPlatillo();
+                    this.Hide();
+                    reporte4.Show();
                     break;
                 case 4:
                     break;

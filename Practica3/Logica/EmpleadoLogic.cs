@@ -43,6 +43,11 @@ namespace Logica
             return empleadoDA.reporte2();
         }
 
+        public LinkedList<Empleado> repoert4()
+        {
+            return empleadoDA.reporte4();
+        }
+
         public bool addEmpleado(long cui, string nombre, string apellido, int telefono, string direccion, double sueldo, int? bono, string jefe, string tipo)
         {
             if(arreglarTipo(tipo) == 1)

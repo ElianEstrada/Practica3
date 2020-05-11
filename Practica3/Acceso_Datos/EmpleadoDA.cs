@@ -379,5 +379,37 @@ namespace Acceso_Datos
             return empleados;
         }
 
+        public LinkedList<Empleado> reporte4()
+        {
+            LinkedList<Empleado> empleados = new LinkedList<Empleado>();
+
+            try
+            {
+
+                cmd = new SqlCommand("platillosChef", conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Empleado empleado = new Empleado();
+                    empleado.Entregas = int.Parse(reader[0].ToString());
+                    empleado.cui = long.Parse(reader[1].ToString());
+                    empleado.nombre = reader[2].ToString();
+                    empleado.apellido = reader[3].ToString();
+
+                    empleados.AddLast(empleado);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return empleados;
+        }
+
     }
 }
