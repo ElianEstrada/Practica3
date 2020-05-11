@@ -18,5 +18,10 @@ namespace Logica
             return clienteDA.listaClientes();
         }
 
+        public bool add_Cliente(long cui, string nombre, string apellido, int celular, string nit)
+        {
+            return clienteDA.addCliente(cui, nombre, apellido, celular, nit);
+        }
+
     }
 }

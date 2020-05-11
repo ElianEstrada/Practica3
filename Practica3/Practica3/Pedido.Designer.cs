@@ -173,7 +173,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 35);
             this.button2.TabIndex = 34;
-            this.button2.Text = "Generar Factura";
+            this.button2.Text = "Ver Facturas";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1

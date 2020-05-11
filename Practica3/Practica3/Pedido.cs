@@ -216,6 +216,8 @@ namespace Practica3
         private void btnAgregarPedido_Click(object sender, EventArgs e)
         {
             Facturas facturas = new Facturas(txtNit.Text, txtNombre.Text, txtDireccion.Text, dtpFechaPedido.Value, dtpHoraPedido.Value, total);
+            llenartablaPlatillos(platilloPedidos, facturas.dgvPlatillosFactura);
+            cliente.add_Cliente(long.Parse(cbCuiCliente.Text), txtNombre.Text, txtApellido.Text, int.Parse(txtTelefono.Text), txtNit.Text);
             facturas.Show();
         }
 

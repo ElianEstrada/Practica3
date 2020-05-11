@@ -75,7 +75,7 @@ namespace Acceso_Datos
             return false;
         }
 
-        public long addCliente(long cui, string nombre, string apellido, int celular, string nit)
+        public bool addCliente(long cui, string nombre, string apellido, int celular, string nit)
         {
 
             try
@@ -98,17 +98,17 @@ namespace Acceso_Datos
 
                     if (filas != 0)
                     {
-                        return cui;
+                        return true;
                     }
                 }
 
             }
             catch (Exception e)
             {
-                return 0;
+                return false;
             }
 
-            return 0;
+            return false;
         }
 
     }

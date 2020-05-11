@@ -208,3 +208,6 @@ as
 begin
 insert into Factura values (@idFactura, @serieFactura, @direccionEntrega, @hora, @fecha, @total);
 end;
+
+
+
