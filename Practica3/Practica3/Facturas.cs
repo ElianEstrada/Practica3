@@ -12,7 +12,7 @@ namespace Practica3
 {
     public partial class Facturas : Form
     {
-        public Facturas(string nit, string nombre, string direccion, DateTime fecha, DateTime hora, double total)
+        public Facturas(string nit, string nombre, string direccion, DateTime fecha, DateTime hora, double total, Entidad.Pedido pedido)
         {
             InitializeComponent();
             txtNit.Text = nit;
@@ -21,6 +21,7 @@ namespace Practica3
             dtpFechaPedido.Value = fecha;
             dtpHoraPedido.Value = hora;
             txtTotalFactura.Text = total.ToString();
+            Entidad.Pedido pedido1 = pedido;
         }
     }
 }

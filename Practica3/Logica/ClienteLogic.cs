@@ -20,7 +20,19 @@ namespace Logica
 
         public bool add_Cliente(long cui, string nombre, string apellido, int celular, string nit)
         {
-            return clienteDA.addCliente(cui, nombre, apellido, celular, nit);
+            if (!existeCliente(cui))
+            {
+                return clienteDA.addCliente(cui, nombre, apellido, celular, nit);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool existeCliente(long cui)
+        {
+            return clienteDA.existeCliente(cui);
         }
 
     }

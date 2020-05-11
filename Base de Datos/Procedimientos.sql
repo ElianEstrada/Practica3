@@ -209,5 +209,6 @@ begin
 insert into Factura values (@idFactura, @serieFactura, @direccionEntrega, @hora, @fecha, @total);
 end;
 
+select * from cliente;
 
-
+select * from PedidoDomicilio;
