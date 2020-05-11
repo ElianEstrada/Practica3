@@ -20,8 +20,10 @@ namespace Practica3
         EmpleadoLogic empleado = new EmpleadoLogic();
         PlatilloLogic platillo = new PlatilloLogic();
         ClienteLogic cliente = new ClienteLogic();
+        int totalPedido = 0;
         static int platillosAgregados = 0;
         static double total = 0;
+        static int idFactura = 0;
 
         public Pedido()
         {
@@ -29,6 +31,7 @@ namespace Practica3
             dtpHoraPedido.Value = DateTime.Now;
             lblPlatillos.Text = platillosAgregados.ToString();
             lblTotalPedido.Text = total.ToString();
+            lblTotalPedidos.Text = totalPedido.ToString();
             llenarPlatillo(platillo.listaPlatillos(), cbPlatillos);
             llenarEmpleados(empleado.listaEmpleados(), cbEmpledoPedido, cbRepartidor);
             llenarBebidas(platillo.listaBebidas(), cbBebidas);
@@ -101,7 +104,7 @@ namespace Practica3
 
             foreach (var item in listaClientes)
             {
-                clientes.Add(item.cui + ", " + item.nombre);
+                clientes.Add(item.cui.ToString());
             }
 
             comboBox.Items.AddRange(clientes.ToArray());
@@ -178,7 +181,7 @@ namespace Practica3
             }
             else
             {
-                MessageBox.Show("Por favor Completar los campos de [Bebidas], [Cantidad], [Platillos] y [Número Pedido]");
+                MessageBox.Show("Por favor Completar los campos de [Bebidas], [Cantidad], [Platillos], [chef] y [Número Pedido]");
             }
         }
 
@@ -206,9 +209,28 @@ namespace Practica3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             llenartablaPlatillos(platilloPedidos, tablaPlatillos.dgvPlatillos);
             tablaPlatillos.Show();
+        }
+
+        private void btnAgregarPedido_Click(object sender, EventArgs e)
+        {
+            Facturas facturas = new Facturas(txtNit.Text, txtNombre.Text, txtDireccion.Text, dtpFechaPedido.Value, dtpHoraPedido.Value, total);
+            facturas.Show();
+        }
+
+        private void cbCuiCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var item in cliente.listaClientes())
+            {
+                if(item.cui == long.Parse(cbCuiCliente.Text))
+                {
+                    txtNombre.Text = item.nombre;
+                    txtApellido.Text = item.apellido;
+                    txtNit.Text = item.nit;
+                    txtTelefono.Text = item.telefono.ToString();
+                }
+            }
         }
     }
 }

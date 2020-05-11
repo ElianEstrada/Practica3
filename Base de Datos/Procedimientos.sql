@@ -198,4 +198,13 @@ end;
 
 
 select * from platillo as P
-where P.idPlatillo = 1;
+where P.idPlatillo = 2;
+
+select * from Factura;
+
+create procedure add_Factura
+@idFactura int,  @serieFactura varchar(45), @direccionEntrega text, @hora time, @fecha date, @total numeric(8,2)
+as
+begin
+insert into Factura values (@idFactura, @serieFactura, @direccionEntrega, @hora, @fecha, @total);
+end;

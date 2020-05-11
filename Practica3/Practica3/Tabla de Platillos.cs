@@ -22,7 +22,6 @@ namespace Practica3
         {
             Pedido pedido = new Pedido();
             this.Close();
-            pedido.Show();
         }
     }
 }

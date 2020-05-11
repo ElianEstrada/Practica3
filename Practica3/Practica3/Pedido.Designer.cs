@@ -339,6 +339,7 @@
             this.cbCuiCliente.Name = "cbCuiCliente";
             this.cbCuiCliente.Size = new System.Drawing.Size(172, 23);
             this.cbCuiCliente.TabIndex = 17;
+            this.cbCuiCliente.SelectedIndexChanged += new System.EventHandler(this.cbCuiCliente_SelectedIndexChanged);
             // 
             // btnAgregarPedido
             // 
@@ -351,6 +352,7 @@
             this.btnAgregarPedido.TabIndex = 16;
             this.btnAgregarPedido.Text = "Agregar Pedido";
             this.btnAgregarPedido.UseVisualStyleBackColor = false;
+            this.btnAgregarPedido.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // cbRepartidor
             // 

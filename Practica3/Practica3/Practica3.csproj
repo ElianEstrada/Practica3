@@ -52,6 +52,12 @@
     <Compile Include="Empleado.Designer.cs">
       <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="Empleado.resx">
       <DependentUpon>Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
