@@ -62,6 +62,9 @@ namespace Practica3
                     reporte4.Show();
                     break;
                 case 4:
+                    Reporte5_Facturacion reporte5 = new Reporte5_Facturacion();
+                    this.Hide();
+                    reporte5.Show();
                     break;
             }
         }

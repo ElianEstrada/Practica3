@@ -405,10 +405,23 @@ where MONTH(F.fecha) = 5 and YEAR(F.fecha) = 2020;
 
 --Reporte Facturación por día.
 select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
-where DAY(F.fecha) = 9 and MONTH(F.fecha) = 5 and YEAR(F.fecha) = 2020;s
+where DAY(F.fecha) = 9 and MONTH(F.fecha) = 5 and YEAR(F.fecha) = 2020;
 
+create procedure facturacionMes
+@fecha date
+as
+begin 
+select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
+where MONTH(F.fecha) = MONTH(@fecha) and YEAR(F.fecha) = YEAR(@fecha);
+end;
 
-
+create procedure facturacionDia
+@fecha date
+as
+begin 
+select COUNT(*) as TotalFacturas, SUM(F.total) as TotalFacturacion from Factura as F
+where DAY(F.fecha) = DAY(@fecha) and MONTH(F.fecha) = MONTH(@fecha) and YEAR(F.fecha) = YEAR(@fecha);
+end;
 
 
 

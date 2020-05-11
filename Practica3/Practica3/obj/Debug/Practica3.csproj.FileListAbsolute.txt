@@ -23,3 +23,4 @@ D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Pract
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Reporte2_EmpleadoOrden.resources
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Reporte3_Platillos.resources
 D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Reporte4_ChefPlatillo.resources
+D:\Documents\Elian\2020\Usac\Primer_Semestre\IPC2\Lab\Practica_3\Practica3\Practica3\obj\Debug\Practica3.Reporte5_Facturacion.resources

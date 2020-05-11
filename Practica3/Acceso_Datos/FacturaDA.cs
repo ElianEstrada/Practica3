@@ -86,5 +86,39 @@ namespace Acceso_Datos
             return facturas;
         }
 
+
+        public LinkedList<Factura> reporte5(string tipo, string fecha)
+        {
+            LinkedList<Factura> facturas = new LinkedList<Factura>();
+
+            try
+            {
+
+                cmd = new SqlCommand("facturacion" + tipo, conexion.abrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Factura factura = new Factura();
+
+                    factura.idFactura = int.Parse(reader[0].ToString());
+                    factura.total = double.Parse(reader[1].ToString());
+
+                    facturas.AddLast(factura);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return facturas;
+        }
+
     }
 }

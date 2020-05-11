@@ -23,5 +23,10 @@ namespace Logica
             return facturaDA.listaFacturas();
         }
 
+        public LinkedList<Factura> reporte5(string tipo, DateTime fecha)
+        {
+            return facturaDA.reporte5(tipo, String.Format("{0:yyyy-MM-dd}", fecha));
+        }
+
     }
 }

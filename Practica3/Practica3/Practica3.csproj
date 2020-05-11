@@ -102,6 +102,12 @@
     <Compile Include="Reporte4-ChefPlatillo.Designer.cs">
       <DependentUpon>Reporte4-ChefPlatillo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte5-Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte5-Facturacion.Designer.cs">
+      <DependentUpon>Reporte5-Facturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tabla de Platillos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte4-ChefPlatillo.resx">
       <DependentUpon>Reporte4-ChefPlatillo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte5-Facturacion.resx">
+      <DependentUpon>Reporte5-Facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tabla de Platillos.resx">
       <DependentUpon>Tabla de Platillos.cs</DependentUpon>
